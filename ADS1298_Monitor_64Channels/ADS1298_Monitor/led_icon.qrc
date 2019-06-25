@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>LED.png</file>
+    </qresource>
+</RCC>

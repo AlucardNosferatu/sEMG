@@ -1,0 +1,482 @@
+﻿生成启动时间为 2018/12/22 16:55:34。
+     1>项目“F:\64channels EMG\array_semg-ADS1298_Monitor-master\ADS1298_Monitor\ADS1298_Monitor.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(345,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /Ifftw3 /IC:\Qt5\Qt5.5.0\5.5\msvc2012\include /IC:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtPrintSupport /IC:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtWidgets /IC:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtGui /IC:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtANGLE /IC:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtSerialPort /IC:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtNetwork /IC:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore /Irelease /I. /I"C:\Qt5\Qt5.5.0\5.5\msvc2012\mkspecs\win32-msvc2012" /I.\GeneratedFiles /nologo /W3 /WX- /O2 /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D QT_NO_DEBUG /D QT_PRINTSUPPORT_LIB /D QT_WIDGETS_LIB /D QT_GUI_LIB /D QT_SERIALPORT_LIB /D QT_NETWORK_LIB /D QT_CORE_LIB /D NDEBUG /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Win32\Release\\" /Fd"Win32\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt -w34100 -w34189 -w44996 ads1298decoder.cpp dialogs\fftdialog.cpp iirfilter.cpp main.cpp mainwindow.cpp qcustomplot.cpp Release\moc_ads1298decoder.cpp Release\moc_fftdialog.cpp Release\moc_mainwindow.cpp Release\moc_qcustomplot.cpp
+         ads1298decoder.cpp
+     1>ads1298decoder.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>ads1298decoder.cpp(154): fatal error C1075: 与左侧的 大括号“{”(位于“ads1298decoder.cpp(108)”)匹配之前遇到文件结束
+         fftdialog.cpp
+     1>dialogs\fftdialog.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\dialogs\fftdialog.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(139): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(139): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(155): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(155): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(247): error C3254: “FFTDialog”: 类包含显式重写“copy”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(247): error C2838: “copy”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(267): error C3254: “FFTDialog”: 类包含显式重写“destroySubTree”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(267): error C2838: “destroySubTree”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(281): error C3254: “FFTDialog”: 类包含显式重写“deleteNode”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(281): error C2838: “deleteNode”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(292): error C3254: “FFTDialog”: 类包含显式重写“findNode”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(292): error C2838: “findNode”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(317): error C3254: “FFTDialog”: 类包含显式重写“nodeRange”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(317): error C2838: “nodeRange”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(594): error C3254: “FFTDialog”: 类包含显式重写“{ctor}”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(594): error C2838: “{ctor}”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(604): error C3254: “FFTDialog”: 类包含显式重写“=”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(604): error C2838: “=”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(610): error C3254: “FFTDialog”: 类包含显式重写“clear”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(610): error C2838: “clear”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(618): error C3254: “FFTDialog”: 类包含显式重写“value”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(618): error C2838: “value”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(624): error C3254: “FFTDialog”: 类包含显式重写“[]”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(624): error C2838: “[]”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(634): error C3254: “FFTDialog”: 类包含显式重写“[]”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(634): error C2838: “[]”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(651): error C3254: “FFTDialog”: 类包含显式重写“count”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(651): error C2838: “count”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(657): error C3254: “FFTDialog”: 类包含显式重写“contains”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(657): error C2838: “contains”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(684): error C3254: “FFTDialog”: 类包含显式重写“insert”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(684): error C2838: “insert”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(752): error C3254: “FFTDialog”: 类包含显式重写“insert”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(752): error C2838: “insert”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(769): error C3254: “FFTDialog”: 类包含显式重写“insertMulti”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(769): error C2838: “insertMulti”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(821): error C3254: “FFTDialog”: 类包含显式重写“insertMulti”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(821): error C2838: “insertMulti”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(829): error C3254: “FFTDialog”: 类包含显式重写“constFind”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(829): error C2838: “constFind”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(835): error C3254: “FFTDialog”: 类包含显式重写“find”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(835): error C2838: “find”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(843): error C3254: “FFTDialog”: 类包含显式重写“find”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(843): error C2838: “find”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(856): error C3254: “FFTDialog”: 类包含显式重写“unite”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(856): error C2838: “unite”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(865): error C3254: “FFTDialog”: 类包含显式重写“equal_range”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(865): error C2838: “equal_range”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(899): error C3254: “FFTDialog”: 类包含显式重写“remove”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(899): error C2838: “remove”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(913): error C3254: “FFTDialog”: 类包含显式重写“take”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(913): error C2838: “take”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(948): error C3254: “FFTDialog”: 类包含显式重写“erase”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(948): error C2838: “erase”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(962): error C3254: “FFTDialog”: 类包含显式重写“detach_helper”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(962): error C2838: “detach_helper”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(982): error C3254: “FFTDialog”: 类包含显式重写“uniqueKeys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(982): error C2838: “uniqueKeys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(995): error C3254: “FFTDialog”: 类包含显式重写“keys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(995): error C2838: “keys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1008): error C3254: “FFTDialog”: 类包含显式重写“keys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1008): error C2838: “keys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1021): error C3254: “FFTDialog”: 类包含显式重写“key”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1021): error C2838: “key”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1034): error C3254: “FFTDialog”: 类包含显式重写“values”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1034): error C2838: “values”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1049): error C3254: “FFTDialog”: 类包含显式重写“values”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1049): error C2838: “values”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1058): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1058): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1068): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1068): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1078): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1078): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1088): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1088): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1108): error C3254: “FFTDialog”: 类包含显式重写“==”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1108): error C2838: “==”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1119): error C3254: “FFTDialog”: 类包含显式重写“{ctor}”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1119): error C2838: “{ctor}”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1131): error C3254: “FFTDialog”: 类包含显式重写“toStdMap”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1131): error C2838: “toStdMap”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1203): error C3254: “FFTDialog”: 类包含显式重写“contains”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1203): error C2838: “contains”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1220): error C3254: “FFTDialog”: 类包含显式重写“remove”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1220): error C2838: “remove”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1234): error C3254: “FFTDialog”: 类包含显式重写“count”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1234): error C2838: “count”: 成员声明中的非法限定名
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(89): error C2059: 语法错误:“namespace”
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(89): error C2334: “{”的前面有意外标记；跳过明显的函数体
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(497): error C2535: “FFTDialog::QVariant FFTDialog::qVariantFromValue(const T &)”: 已经定义或声明成员函数
+                 c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(84) : 参见“FFTDialog::qVariantFromValue”的声明
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(526): error C3254: “FFTDialog”: 类包含显式重写“isValid”，但并不从包含函数声明的接口派生
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(526): error C2838: “isValid”: 成员声明中的非法限定名
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(530): error C3254: “FFTDialog”: 类包含显式重写“setValue”，但并不从包含函数声明的接口派生
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(530): error C2838: “setValue”: 成员声明中的非法限定名
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(533): error C2804: 二进制“operator >>”的参数太多
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(534): error C2804: 二进制“operator <<”的参数太多
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(535): error C2804: 二进制“operator >>”的参数太多
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(536): error C2804: 二进制“operator <<”的参数太多
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(540): error C3254: “FFTDialog”: 类包含显式重写“isDetached”，但并不从包含函数声明的接口派生
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(540): error C2838: “isDetached”: 成员声明中的非法限定名
+     1>c:\qt5\qt5.5.0\5.5\msvc2012\include\qtcore\qvariant.h(540): fatal error C1003: 错误计数超过 100；正在停止编译
+         iirfilter.cpp
+         main.cpp
+     1>f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\mainwindow.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\dialogs/fftdialog.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(139): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(139): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(155): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(155): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(247): error C3254: “FFTDialog”: 类包含显式重写“copy”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(247): error C2838: “copy”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(267): error C3254: “FFTDialog”: 类包含显式重写“destroySubTree”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(267): error C2838: “destroySubTree”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(281): error C3254: “FFTDialog”: 类包含显式重写“deleteNode”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(281): error C2838: “deleteNode”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(292): error C3254: “FFTDialog”: 类包含显式重写“findNode”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(292): error C2838: “findNode”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(317): error C3254: “FFTDialog”: 类包含显式重写“nodeRange”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(317): error C2838: “nodeRange”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(594): error C3254: “FFTDialog”: 类包含显式重写“{ctor}”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(594): error C2838: “{ctor}”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(604): error C3254: “FFTDialog”: 类包含显式重写“=”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(604): error C2838: “=”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(610): error C3254: “FFTDialog”: 类包含显式重写“clear”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(610): error C2838: “clear”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(618): error C3254: “FFTDialog”: 类包含显式重写“value”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(618): error C2838: “value”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(624): error C3254: “FFTDialog”: 类包含显式重写“[]”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(624): error C2838: “[]”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(634): error C3254: “FFTDialog”: 类包含显式重写“[]”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(634): error C2838: “[]”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(651): error C3254: “FFTDialog”: 类包含显式重写“count”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(651): error C2838: “count”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(657): error C3254: “FFTDialog”: 类包含显式重写“contains”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(657): error C2838: “contains”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(684): error C3254: “FFTDialog”: 类包含显式重写“insert”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(684): error C2838: “insert”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(752): error C3254: “FFTDialog”: 类包含显式重写“insert”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(752): error C2838: “insert”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(769): error C3254: “FFTDialog”: 类包含显式重写“insertMulti”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(769): error C2838: “insertMulti”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(821): error C3254: “FFTDialog”: 类包含显式重写“insertMulti”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(821): error C2838: “insertMulti”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(829): error C3254: “FFTDialog”: 类包含显式重写“constFind”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(829): error C2838: “constFind”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(835): error C3254: “FFTDialog”: 类包含显式重写“find”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(835): error C2838: “find”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(843): error C3254: “FFTDialog”: 类包含显式重写“find”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(843): error C2838: “find”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(856): error C3254: “FFTDialog”: 类包含显式重写“unite”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(856): error C2838: “unite”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(865): error C3254: “FFTDialog”: 类包含显式重写“equal_range”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(865): error C2838: “equal_range”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(899): error C3254: “FFTDialog”: 类包含显式重写“remove”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(899): error C2838: “remove”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(913): error C3254: “FFTDialog”: 类包含显式重写“take”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(913): error C2838: “take”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(948): error C3254: “FFTDialog”: 类包含显式重写“erase”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(948): error C2838: “erase”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(962): error C3254: “FFTDialog”: 类包含显式重写“detach_helper”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(962): error C2838: “detach_helper”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(982): error C3254: “FFTDialog”: 类包含显式重写“uniqueKeys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(982): error C2838: “uniqueKeys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(995): error C3254: “FFTDialog”: 类包含显式重写“keys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(995): error C2838: “keys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1008): error C3254: “FFTDialog”: 类包含显式重写“keys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1008): error C2838: “keys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1021): error C3254: “FFTDialog”: 类包含显式重写“key”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1021): error C2838: “key”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1034): error C3254: “FFTDialog”: 类包含显式重写“values”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1034): error C2838: “values”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1049): error C3254: “FFTDialog”: 类包含显式重写“values”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1049): error C2838: “values”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1058): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1058): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1068): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1068): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1078): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1078): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1088): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1088): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1108): error C3254: “FFTDialog”: 类包含显式重写“==”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1108): error C2838: “==”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1119): error C3254: “FFTDialog”: 类包含显式重写“{ctor}”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1119): error C2838: “{ctor}”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1131): error C3254: “FFTDialog”: 类包含显式重写“toStdMap”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1131): error C2838: “toStdMap”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1203): error C3254: “FFTDialog”: 类包含显式重写“contains”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1203): error C2838: “contains”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1220): error C3254: “FFTDialog”: 类包含显式重写“remove”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1220): error C2838: “remove”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1234): error C3254: “FFTDialog”: 类包含显式重写“count”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1234): error C2838: “count”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(89): error C2059: 语法错误:“namespace”
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(89): error C2334: “{”的前面有意外标记；跳过明显的函数体
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(497): error C2535: “FFTDialog::QVariant FFTDialog::qVariantFromValue(const T &)”: 已经定义或声明成员函数
+                 C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(84) : 参见“FFTDialog::qVariantFromValue”的声明
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(526): error C3254: “FFTDialog”: 类包含显式重写“isValid”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(526): error C2838: “isValid”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(530): error C3254: “FFTDialog”: 类包含显式重写“setValue”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(530): error C2838: “setValue”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(533): error C2804: 二进制“operator >>”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(534): error C2804: 二进制“operator <<”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(535): error C2804: 二进制“operator >>”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(536): error C2804: 二进制“operator <<”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(540): error C3254: “FFTDialog”: 类包含显式重写“isDetached”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(540): error C2838: “isDetached”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(540): fatal error C1003: 错误计数超过 100；正在停止编译
+         mainwindow.cpp
+     1>mainwindow.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\mainwindow.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\dialogs/fftdialog.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(139): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(139): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(155): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(155): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(247): error C3254: “FFTDialog”: 类包含显式重写“copy”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(247): error C2838: “copy”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(267): error C3254: “FFTDialog”: 类包含显式重写“destroySubTree”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(267): error C2838: “destroySubTree”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(281): error C3254: “FFTDialog”: 类包含显式重写“deleteNode”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(281): error C2838: “deleteNode”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(292): error C3254: “FFTDialog”: 类包含显式重写“findNode”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(292): error C2838: “findNode”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(317): error C3254: “FFTDialog”: 类包含显式重写“nodeRange”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(317): error C2838: “nodeRange”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(594): error C3254: “FFTDialog”: 类包含显式重写“{ctor}”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(594): error C2838: “{ctor}”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(604): error C3254: “FFTDialog”: 类包含显式重写“=”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(604): error C2838: “=”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(610): error C3254: “FFTDialog”: 类包含显式重写“clear”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(610): error C2838: “clear”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(618): error C3254: “FFTDialog”: 类包含显式重写“value”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(618): error C2838: “value”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(624): error C3254: “FFTDialog”: 类包含显式重写“[]”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(624): error C2838: “[]”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(634): error C3254: “FFTDialog”: 类包含显式重写“[]”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(634): error C2838: “[]”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(651): error C3254: “FFTDialog”: 类包含显式重写“count”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(651): error C2838: “count”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(657): error C3254: “FFTDialog”: 类包含显式重写“contains”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(657): error C2838: “contains”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(684): error C3254: “FFTDialog”: 类包含显式重写“insert”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(684): error C2838: “insert”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(752): error C3254: “FFTDialog”: 类包含显式重写“insert”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(752): error C2838: “insert”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(769): error C3254: “FFTDialog”: 类包含显式重写“insertMulti”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(769): error C2838: “insertMulti”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(821): error C3254: “FFTDialog”: 类包含显式重写“insertMulti”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(821): error C2838: “insertMulti”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(829): error C3254: “FFTDialog”: 类包含显式重写“constFind”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(829): error C2838: “constFind”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(835): error C3254: “FFTDialog”: 类包含显式重写“find”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(835): error C2838: “find”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(843): error C3254: “FFTDialog”: 类包含显式重写“find”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(843): error C2838: “find”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(856): error C3254: “FFTDialog”: 类包含显式重写“unite”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(856): error C2838: “unite”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(865): error C3254: “FFTDialog”: 类包含显式重写“equal_range”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(865): error C2838: “equal_range”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(899): error C3254: “FFTDialog”: 类包含显式重写“remove”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(899): error C2838: “remove”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(913): error C3254: “FFTDialog”: 类包含显式重写“take”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(913): error C2838: “take”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(948): error C3254: “FFTDialog”: 类包含显式重写“erase”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(948): error C2838: “erase”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(962): error C3254: “FFTDialog”: 类包含显式重写“detach_helper”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(962): error C2838: “detach_helper”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(982): error C3254: “FFTDialog”: 类包含显式重写“uniqueKeys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(982): error C2838: “uniqueKeys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(995): error C3254: “FFTDialog”: 类包含显式重写“keys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(995): error C2838: “keys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1008): error C3254: “FFTDialog”: 类包含显式重写“keys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1008): error C2838: “keys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1021): error C3254: “FFTDialog”: 类包含显式重写“key”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1021): error C2838: “key”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1034): error C3254: “FFTDialog”: 类包含显式重写“values”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1034): error C2838: “values”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1049): error C3254: “FFTDialog”: 类包含显式重写“values”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1049): error C2838: “values”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1058): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1058): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1068): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1068): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1078): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1078): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1088): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1088): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1108): error C3254: “FFTDialog”: 类包含显式重写“==”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1108): error C2838: “==”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1119): error C3254: “FFTDialog”: 类包含显式重写“{ctor}”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1119): error C2838: “{ctor}”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1131): error C3254: “FFTDialog”: 类包含显式重写“toStdMap”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1131): error C2838: “toStdMap”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1203): error C3254: “FFTDialog”: 类包含显式重写“contains”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1203): error C2838: “contains”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1220): error C3254: “FFTDialog”: 类包含显式重写“remove”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1220): error C2838: “remove”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1234): error C3254: “FFTDialog”: 类包含显式重写“count”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1234): error C2838: “count”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(89): error C2059: 语法错误:“namespace”
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(89): error C2334: “{”的前面有意外标记；跳过明显的函数体
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(497): error C2535: “FFTDialog::QVariant FFTDialog::qVariantFromValue(const T &)”: 已经定义或声明成员函数
+                 C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(84) : 参见“FFTDialog::qVariantFromValue”的声明
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(526): error C3254: “FFTDialog”: 类包含显式重写“isValid”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(526): error C2838: “isValid”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(530): error C3254: “FFTDialog”: 类包含显式重写“setValue”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(530): error C2838: “setValue”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(533): error C2804: 二进制“operator >>”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(534): error C2804: 二进制“operator <<”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(535): error C2804: 二进制“operator >>”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(536): error C2804: 二进制“operator <<”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(540): error C3254: “FFTDialog”: 类包含显式重写“isDetached”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(540): error C2838: “isDetached”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(540): fatal error C1003: 错误计数超过 100；正在停止编译
+         qcustomplot.cpp
+         moc_ads1298decoder.cpp
+         moc_fftdialog.cpp
+     1>f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\release\../dialogs/fftdialog.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>Release\moc_fftdialog.cpp(30): error C2059: 语法错误:“{”
+     1>Release\moc_fftdialog.cpp(30): error C2334: “{”的前面有意外标记；跳过明显的函数体
+     1>Release\moc_fftdialog.cpp(41): error C2059: 语法错误:“{”
+     1>Release\moc_fftdialog.cpp(41): error C2334: “{”的前面有意外标记；跳过明显的函数体
+     1>Release\moc_fftdialog.cpp(64): error C2686: 不能重载具有相同参数类型的静态和非静态成员函数
+                 f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\release\../dialogs/fftdialog.h(12): 可能是“void FFTDialog::qt_static_metacall(QObject *,QMetaObject::Call,int,void **)”
+                 Release\moc_fftdialog.cpp(63): 或       “void FFTDialog::qt_static_metacall(QObject *,QMetaObject::Call,int,void **)”
+     1>Release\moc_fftdialog.cpp(65): error C2059: 语法错误:“if”
+     1>Release\moc_fftdialog.cpp(65): error C2334: “{”的前面有意外标记；跳过明显的函数体
+     1>Release\moc_fftdialog.cpp(73): error C2182: “_a”: 非法使用“void”类型
+     1>Release\moc_fftdialog.cpp(76): error C2143: 语法错误 : 缺少“;”(在“FFTDialog::staticMetaObject”的前面)
+     1>Release\moc_fftdialog.cpp(76): error C2734: “QMetaObject”: 如果不是外部的，则必须初始化常量对象
+     1>Release\moc_fftdialog.cpp(76): error C2512: “FFTDialog”: 没有合适的默认构造函数可用
+     1>Release\moc_fftdialog.cpp(76): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>Release\moc_fftdialog.cpp(76): error C2373: “staticMetaObject”: 重定义；不同的类型修饰符
+                 f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\release\../dialogs/fftdialog.h(12) : 参见“staticMetaObject”的声明
+     1>Release\moc_fftdialog.cpp(77): error C2440: “初始化”: 无法从“const QMetaObject *”转换为“int”
+                 没有使该转换得以执行的上下文
+     1>Release\moc_fftdialog.cpp(77): error C2065: “qt_meta_stringdata_FFTDialog”: 未声明的标识符
+     1>Release\moc_fftdialog.cpp(77): error C2228: “.data”的左边必须有类/结构/联合
+                 类型是“'unknown-type'”
+     1>Release\moc_fftdialog.cpp(77): error C2078: 初始值设定项太多
+     1>Release\moc_fftdialog.cpp(77): error C2552: “FFTDialog::staticMetaObject”: 不能用初始值设定项列表初始化非聚合
+                 “int”不是数组或类 : 不是数组或类的类型不是聚合类型
+     1>Release\moc_fftdialog.cpp(78): error C2065: “qt_meta_data_FFTDialog”: 未声明的标识符
+     1>Release\moc_fftdialog.cpp(82): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>Release\moc_fftdialog.cpp(82): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
+     1>Release\moc_fftdialog.cpp(82): error C2371: “QMetaObject”: 重定义；不同的基类型
+                 Release\moc_fftdialog.cpp(76) : 参见“QMetaObject”的声明
+     1>Release\moc_fftdialog.cpp(83): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>Release\moc_fftdialog.cpp(83): error C2556: “int *FFTDialog::metaObject(void) const”: 重载函数与“const QMetaObject *FFTDialog::metaObject(void) const”只是在返回类型上不同
+                 f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\release\../dialogs/fftdialog.h(12) : 参见“FFTDialog::metaObject”的声明
+     1>Release\moc_fftdialog.cpp(83): error C2373: “FFTDialog::metaObject”: 重定义；不同的类型修饰符
+                 f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\release\../dialogs/fftdialog.h(12) : 参见“FFTDialog::metaObject”的声明
+     1>Release\moc_fftdialog.cpp(90): error C2065: “qt_meta_stringdata_FFTDialog”: 未声明的标识符
+     1>Release\moc_fftdialog.cpp(90): error C2228: “.stringdata0”的左边必须有类/结构/联合
+                 类型是“'unknown-type'”
+         moc_mainwindow.cpp
+     1>f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\release\../mainwindow.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>f:\64channels emg\array_semg-ads1298_monitor-master\ads1298_monitor\dialogs/fftdialog.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(139): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(139): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(155): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(155): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(247): error C3254: “FFTDialog”: 类包含显式重写“copy”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(247): error C2838: “copy”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(267): error C3254: “FFTDialog”: 类包含显式重写“destroySubTree”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(267): error C2838: “destroySubTree”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(281): error C3254: “FFTDialog”: 类包含显式重写“deleteNode”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(281): error C2838: “deleteNode”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(292): error C3254: “FFTDialog”: 类包含显式重写“findNode”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(292): error C2838: “findNode”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(317): error C3254: “FFTDialog”: 类包含显式重写“nodeRange”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(317): error C2838: “nodeRange”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(594): error C3254: “FFTDialog”: 类包含显式重写“{ctor}”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(594): error C2838: “{ctor}”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(604): error C3254: “FFTDialog”: 类包含显式重写“=”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(604): error C2838: “=”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(610): error C3254: “FFTDialog”: 类包含显式重写“clear”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(610): error C2838: “clear”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(618): error C3254: “FFTDialog”: 类包含显式重写“value”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(618): error C2838: “value”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(624): error C3254: “FFTDialog”: 类包含显式重写“[]”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(624): error C2838: “[]”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(634): error C3254: “FFTDialog”: 类包含显式重写“[]”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(634): error C2838: “[]”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(651): error C3254: “FFTDialog”: 类包含显式重写“count”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(651): error C2838: “count”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(657): error C3254: “FFTDialog”: 类包含显式重写“contains”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(657): error C2838: “contains”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(684): error C3254: “FFTDialog”: 类包含显式重写“insert”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(684): error C2838: “insert”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(752): error C3254: “FFTDialog”: 类包含显式重写“insert”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(752): error C2838: “insert”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(769): error C3254: “FFTDialog”: 类包含显式重写“insertMulti”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(769): error C2838: “insertMulti”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(821): error C3254: “FFTDialog”: 类包含显式重写“insertMulti”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(821): error C2838: “insertMulti”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(829): error C3254: “FFTDialog”: 类包含显式重写“constFind”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(829): error C2838: “constFind”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(835): error C3254: “FFTDialog”: 类包含显式重写“find”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(835): error C2838: “find”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(843): error C3254: “FFTDialog”: 类包含显式重写“find”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(843): error C2838: “find”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(856): error C3254: “FFTDialog”: 类包含显式重写“unite”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(856): error C2838: “unite”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(865): error C3254: “FFTDialog”: 类包含显式重写“equal_range”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(865): error C2838: “equal_range”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(899): error C3254: “FFTDialog”: 类包含显式重写“remove”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(899): error C2838: “remove”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(913): error C3254: “FFTDialog”: 类包含显式重写“take”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(913): error C2838: “take”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(948): error C3254: “FFTDialog”: 类包含显式重写“erase”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(948): error C2838: “erase”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(962): error C3254: “FFTDialog”: 类包含显式重写“detach_helper”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(962): error C2838: “detach_helper”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(982): error C3254: “FFTDialog”: 类包含显式重写“uniqueKeys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(982): error C2838: “uniqueKeys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(995): error C3254: “FFTDialog”: 类包含显式重写“keys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(995): error C2838: “keys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1008): error C3254: “FFTDialog”: 类包含显式重写“keys”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1008): error C2838: “keys”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1021): error C3254: “FFTDialog”: 类包含显式重写“key”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1021): error C2838: “key”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1034): error C3254: “FFTDialog”: 类包含显式重写“values”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1034): error C2838: “values”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1049): error C3254: “FFTDialog”: 类包含显式重写“values”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1049): error C2838: “values”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1058): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1058): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1068): error C3254: “FFTDialog”: 类包含显式重写“lowerBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1068): error C2838: “lowerBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1078): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1078): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1088): error C3254: “FFTDialog”: 类包含显式重写“upperBound”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1088): error C2838: “upperBound”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1108): error C3254: “FFTDialog”: 类包含显式重写“==”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1108): error C2838: “==”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1119): error C3254: “FFTDialog”: 类包含显式重写“{ctor}”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1119): error C2838: “{ctor}”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1131): error C3254: “FFTDialog”: 类包含显式重写“toStdMap”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1131): error C2838: “toStdMap”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1203): error C3254: “FFTDialog”: 类包含显式重写“contains”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1203): error C2838: “contains”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1220): error C3254: “FFTDialog”: 类包含显式重写“remove”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1220): error C2838: “remove”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1234): error C3254: “FFTDialog”: 类包含显式重写“count”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qmap.h(1234): error C2838: “count”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(89): error C2059: 语法错误:“namespace”
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(89): error C2334: “{”的前面有意外标记；跳过明显的函数体
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(497): error C2535: “FFTDialog::QVariant FFTDialog::qVariantFromValue(const T &)”: 已经定义或声明成员函数
+                 C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(84) : 参见“FFTDialog::qVariantFromValue”的声明
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(526): error C3254: “FFTDialog”: 类包含显式重写“isValid”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(526): error C2838: “isValid”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(530): error C3254: “FFTDialog”: 类包含显式重写“setValue”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(530): error C2838: “setValue”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(533): error C2804: 二进制“operator >>”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(534): error C2804: 二进制“operator <<”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(535): error C2804: 二进制“operator >>”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(536): error C2804: 二进制“operator <<”的参数太多
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(540): error C3254: “FFTDialog”: 类包含显式重写“isDetached”，但并不从包含函数声明的接口派生
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(540): error C2838: “isDetached”: 成员声明中的非法限定名
+     1>C:\Qt5\Qt5.5.0\5.5\msvc2012\include\QtCore/qvariant.h(540): fatal error C1003: 错误计数超过 100；正在停止编译
+         moc_qcustomplot.cpp
+         正在生成代码...
+     1>已完成生成项目“F:\64channels EMG\array_semg-ADS1298_Monitor-master\ADS1298_Monitor\ADS1298_Monitor.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:08.01

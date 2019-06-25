@@ -1,0 +1,11 @@
+release/main.o
+release/mainwindow.o
+release/qcustomplot.o
+release/iirfilter.o
+release/fftdialog.o
+release/ads1298decoder.o
+release/qrc_led_icon.o
+release/moc_mainwindow.o
+release/moc_qcustomplot.o
+release/moc_fftdialog.o
+release/moc_ads1298decoder.o
