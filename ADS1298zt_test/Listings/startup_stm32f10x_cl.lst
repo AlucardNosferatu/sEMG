@@ -567,11 +567,11 @@ ARM Macro Assembler    Page 9
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\objects\startup_stm32f10x_cl.d -o.\objects\startup_stm32f10x_cl.
-o -IC:\Users\ntsmzt\Desktop\ADS1298_PCB\ADS1298zt_test\RTE -IC:\Keil_v5\ARM\PAC
-K\Keil\STM32F1xx_DFP\1.0.5\Device\Include -IC:\Keil_v5\ARM\CMSIS\Include -IC:\K
-eil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5 --predefine="__EVAL SETA 1" --predefin
-e="__UVISION_VERSION SETA 514" --predefine="STM32F10X_HD SETA 1" --list=.\listi
-ngs\startup_stm32f10x_cl.lst startup\startup_stm32f10x_cl.s
+o -IC:\Users\16413\Desktop\手势项目\学长提供\array_semg-ADS1298_MCU-master\ADS1
+298_MCU\RTE -ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0 -ID:\Keil_v5\ARM\CMS
+IS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 514"
+ --predefine="STM32F10X_HD SETA 1" --list=.\listings\startup_stm32f10x_cl.lst s
+tartup\startup_stm32f10x_cl.s
 
 
 

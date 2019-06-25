@@ -3,7 +3,7 @@
 .\objects\ads1298.o: .\driver\inc\stm32f10x_spi.h
 .\objects\ads1298.o: .\CMSIS\stm32f10x.h
 .\objects\ads1298.o: .\CMSIS\core_cm3.h
-.\objects\ads1298.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\ads1298.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\ads1298.o: .\CMSIS\system_stm32f10x.h
 .\objects\ads1298.o: .\user\stm32f10x_conf.h
 .\objects\ads1298.o: .\driver\inc\stm32f10x_adc.h
@@ -31,4 +31,6 @@
 .\objects\ads1298.o: .\driver\inc\stm32f10x_wwdg.h
 .\objects\ads1298.o: .\driver\inc\misc.h
 .\objects\ads1298.o: user\usart.h
+.\objects\ads1298.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\ads1298.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\ads1298.o: user\schedule.h

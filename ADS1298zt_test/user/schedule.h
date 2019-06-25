@@ -4,5 +4,8 @@
 #include "stm32f10x.h"
 
 void delayMs(u32 time);
+void delay_ms(u16 time);
+void delayL();
+
 
 #endif

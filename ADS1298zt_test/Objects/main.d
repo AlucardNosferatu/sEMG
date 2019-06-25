@@ -3,7 +3,7 @@
 .\objects\main.o: .\driver\inc\stm32f10x_spi.h
 .\objects\main.o: .\CMSIS\stm32f10x.h
 .\objects\main.o: .\CMSIS\core_cm3.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: .\CMSIS\system_stm32f10x.h
 .\objects\main.o: .\user\stm32f10x_conf.h
 .\objects\main.o: .\driver\inc\stm32f10x_adc.h
@@ -31,4 +31,7 @@
 .\objects\main.o: .\driver\inc\stm32f10x_wwdg.h
 .\objects\main.o: .\driver\inc\misc.h
 .\objects\main.o: user\usart.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: user\schedule.h
+.\objects\main.o: user\wifi.h

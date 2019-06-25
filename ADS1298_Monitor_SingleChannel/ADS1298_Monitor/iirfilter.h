@@ -8,15 +8,15 @@ class IIRFilter
 {
 public:
     IIRFilter();
-    int initFilter(double atmp[],double btmp[],int nal,int nbl);
-    double filter(double data);
+    int initFilter(float atmp[],float btmp[],int nal,int nbl);
+    float filter(float data);
     int ResetFilter();
 
 
 private:
-    QList<double> a,b;  //系数序列
-    int al,bl; //系数序列的长度
-    QList<double> xtmp,ytmp;
+    QList<float> a,b;
+    int al,bl;
+    QList<float> xtmp,ytmp;
 };
 
 #endif // IIRFILTER_H
