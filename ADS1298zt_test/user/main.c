@@ -34,7 +34,7 @@ int main(void)
 	atk_8266_send_cmd("AT+CIPMUX=0\r\n","OK",500);//使能单连接
 	//端口号是自己定义的，只要客户端和服务端一致就行
 	
-	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.1.131\",8084\r\n","OK",2000); //创建TCP连接，连接server端，第一个参数为远端IP地址，第二个参数为远端端口号
+	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.1.131\",8081\r\n","OK",2000); //创建TCP连接，连接server端，第一个参数为远端IP地址，第二个参数为远端端口号
 	//这里加判断条件
 	
 	
