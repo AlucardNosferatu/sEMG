@@ -518,7 +518,7 @@ void MainWindow::on_pushButton_record_clicked()
                 rf->open(QIODevice::WriteOnly);
 
                 QTextStream* ro = new QTextStream(rf);
-                *ro<<"Time\t";
+                //*ro<<"Time\t";
                 for(int i=0; i<CH_NUM; i++)
                     *ro<<"EMG"<<i<<'\t';
                 *ro<<'\n';
@@ -542,8 +542,9 @@ void MainWindow::on_pushButton_record_clicked()
         }
 		else 
 		{
+                        //log(tr("File name invalid!"));
 		}
-            //log(tr("File name invalid!"));
+
     }
     else if(ui->pushButton_record->text()=="Stop")                           // when the button show "stop" and putting down the button
     {
