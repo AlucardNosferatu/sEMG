@@ -6,7 +6,7 @@
 //#include "led.h"
 int r;
 
-int main(void)
+int main()
 {
 	u8 r1, r2, c1, c2;
 
