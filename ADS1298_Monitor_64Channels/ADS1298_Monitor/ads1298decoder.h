@@ -27,12 +27,12 @@ class Ads1298Decoder: public QObject
     Q_OBJECT
 
 public:
-    Ads1298Decoder(quint16 port,int index=-1,QObject* parent=0); // the wifi mode
-    Ads1298Decoder(const QString &com, qint32 baudRate,int index=-1,QObject* parent=0); // the com mode
+    Ads1298Decoder(quint16 port,int index=-1,QObject* parent=nullptr); // the wifi mode
+    Ads1298Decoder(const QString &com, qint32 baudRate,int index=-1,QObject* parent=nullptr); // the com mode
     void disconnect();
     void sendCmd(char* cmd, int len);
 private:
-    int index; //
+    int index; //这是啥
     int mode;  // 0-Wifi, 1-Com
     QTcpServer* server;
     QTcpSocket* socket;           //
@@ -53,7 +53,7 @@ private slots:
     void handleComReceiveNewData();
 signals:
     void hasNewDataPacket(int index, double* newDP);// ADS1_CH1, ADS1_CH2...ADS1_CH8,ADS2_CH1...ADS2_CH8
-    void hasNewCmdReply(int index, char cmdR);
+    void hasNewCmdReply(char cmdR);
     void hasNewWifiConnection(int index);
 
 };

@@ -27,7 +27,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -40,7 +40,7 @@ private:
     QList<Ads1298Decoder*> module; //the Ads1298Decoder is a QObject,store the QObject and its subclass's pointer
     QList<QList<double>*> rawData;
     QList<QList<double>*> filterData;
-    QList<IIRFilter*> notchfilters;
+    QList<IIRFilter*> notchfilters_50;
     QList<IIRFilter*> notchfilters_100;
     QList<IIRFilter*> hpfilters;
     void refreshChannelLabels();
@@ -52,7 +52,7 @@ private:
 
 private slots:
     void handleHasNewDataPacket(int index, double* newDP);
-    void handleHasNewCmdReply(int index, char cmdR);
+    void handleHasNewCmdReply(char cmdR);
     void handleHasNewWifiConnection(int index);
 
 
@@ -80,14 +80,6 @@ private slots:
     void on_pushButton_beginReadC_clicked();
     void on_pushButton_stopReadC_clicked();
     void on_pushButton_normalTest_clicked();
-
-    void on_lineEdit_port_cursorPositionChanged(int arg1, int arg2);
-
-    void on_customPlot1_destroyed();
-
-    void on_customPlot_customContextMenuRequested(const QPoint &pos);
-
-    void on_comboBox_channel_currentTextChanged(const QString &arg1);
 
 private:
     void setCustomPlotPattern();

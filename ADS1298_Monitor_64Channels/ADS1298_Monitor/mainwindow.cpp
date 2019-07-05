@@ -3,17 +3,48 @@
 #include <QSerialPortInfo>     //include the header files associated the serial port
 #include <QDebug>
 
-float ahp[1]={1.0f};
-float bhp[5]={0.0627402311,-0.2499714735,0.3744644353,-0.24997147355,0.062740231119};
+static float ahp[1]={
+    1.0f
+};
+static float bhp[5]={
+    static_cast<float>(0.0627402311),
+    static_cast<float>(-0.2499714735),
+    static_cast<float>(0.3744644353),
+    static_cast<float>(-0.24997147355),
+    static_cast<float>(0.062740231119)
+};
+static float anotch[7]={
+    1.000000000000000,
+    static_cast<float>(-1.699163423921474),
+    static_cast<float>(3.464263380095651),
+    static_cast<float>(-3.035006841250400),
+    static_cast<float>(2.930889612822229),
+    static_cast<float>(-1.213689963509197),
+    static_cast<float>(0.604109699507278)
+};
+static float bnotch[7]={
+    static_cast<float>(0.777337677403281),
+    static_cast<float>(-1.441206975301750),
+    static_cast<float>(3.222510786578553),
+    static_cast<float>(-3.065671614896859),
+    static_cast<float>(3.222258852356618),
+    static_cast<float>(-1.440981638482467),
+    static_cast<float>(0.777155376086710)
+};
+static float anotch1[3]={
+    static_cast<float>(0.990498466402),
+    static_cast<float>(-0.6121617180411),
+    static_cast<float>(0.990498466402)
+};
+static float bnotch1[3]={
+    1,
+    static_cast<float>(-0.6121617180411),
+    static_cast<float>(0.980996932804)
+};
 
-float anotch[7]={1.000000000000000,-1.699163423921474,3.464263380095651,-3.035006841250400,
-                     2.930889612822229,-1.213689963509197,0.604109699507278};
-float bnotch[7]={0.777337677403281,-1.441206975301750,3.222510786578553,-3.065671614896859,
-                     3.222258852356618,-1.440981638482467,0.777155376086710};
-float anotch1[3]= {0.990498466402,  -0.6121617180411,    0.990498466402};
-float bnotch1[3]= { 1,  -0.6121617180411,    0.980996932804};
 
-MainWindow::MainWindow(QWidget *parent) :         // the Constuctor
+
+MainWindow::MainWindow(QWidget *parent):         // the Constuctor
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -57,14 +88,15 @@ void MainWindow::on_pushButton_open_clicked()
     QString com = ui->portBox->currentText();
     Ads1298Decoder* ads = new Ads1298Decoder(com,baudRate,0,this);
     module.append(ads);
+    //connect(发送对象,发送对象的信号,接收对象,接收对象的槽函数)
     connect(ads,SIGNAL(hasNewDataPacket(int,double*)),this,SLOT(handleHasNewDataPacket(int,double*)));
     connect(ads,SIGNAL(hasNewCmdReply(int,char)),this,SLOT(handleHasNewCmdReply(int,char)));
     setCustomPlotPattern();
     refreshChannelLabels();
     refreshIIRFilters();
     refreshDataBuffer();
-    plotCounter = timeCounter = 0;    //initialize plotCounter and timeCounter to zero
-    replotTimer.start(100); //10fps,replot the graph per 0.1s
+    plotCounter = timeCounter = 0;      //initialize plotCounter and timeCounter to zero
+    replotTimer.start(100);             //10fps,replot the graph per 0.1s
     ui->statusBar->showMessage(tr("Open successed"));
 }
 
@@ -74,7 +106,7 @@ void MainWindow::on_pushButton_connectWifi_clicked()
     QStringList ports = s.split(";");
     for(int i=0;i<ports.length();i++)
     {
-        Ads1298Decoder* ads = new Ads1298Decoder(ports[i].toUInt(),i,this);//create a pointer pointing to the class Ads1298Decoder
+        Ads1298Decoder* ads = new Ads1298Decoder(static_cast<quint16>(ports[i].toUInt()),i,this);//create a pointer pointing to the class Ads1298Decoder
         module.append(ads);
         connect(module[i],SIGNAL(hasNewDataPacket(int,double*)),this,SLOT(handleHasNewDataPacket(int,double*)));
         connect(module[i],SIGNAL(hasNewCmdReply(int,char)),this,SLOT(handleHasNewCmdReply(int,char)));
@@ -272,15 +304,14 @@ void MainWindow::handleHasNewDataPacket(int module_index, double *newDP)      //
     for(int i=0; i<CH_NUM; i++)
     {
         // i+index*CH_NUM---the data index associated with the Module index
-        double fd;
-        fd = notchfilters_50[i+module_index*CH_NUM]->filter(newDP[i]);                 //50Hz_notchfilters
-        fd = notchfilters_100[i+module_index*CH_NUM]->filter(fd);                      //100Hz_notchfilter
-        fd = hpfilters[i+module_index*CH_NUM]->filter(fd);                             //20Hz_HighPassfilter
-        filterData[i+module_index*CH_NUM]->append(fd);                                 //filterData
-        rawData[i+module_index*CH_NUM]->append(newDP[i]);                              //rawData
-        fdata[i] = fd;
+        float fd;
+        fd = notchfilters_50[i+module_index*CH_NUM]->filter(static_cast<float>(newDP[i]));                  //50Hz_notchfilters
+        fd = notchfilters_100[i+module_index*CH_NUM]->filter(fd);                                           //100Hz_notchfilter
+        fd = hpfilters[i+module_index*CH_NUM]->filter(fd);                                                  //20Hz_HighPassfilter
+        filterData[i+module_index*CH_NUM]->append(static_cast<const double>(fd));                           //filterData
+        rawData[i+module_index*CH_NUM]->append(newDP[i]);                                                   //rawData
+        fdata[i] = static_cast<double>(fd);
     }
-
     if(isRecording)                                        //isRecording is True, Then record the data
     {
         for(int i=0; i<CH_NUM; i++)
@@ -303,15 +334,18 @@ void MainWindow::handleHasNewDataPacket(int module_index, double *newDP)      //
 
 }
 
-void MainWindow::handleHasNewCmdReply(int index, char cmdR)
+void MainWindow::handleHasNewCmdReply(char cmdR)
 {
-    //log(QString::number(cmdR,16));
+    QString cmdR_str=QString::number(cmdR,16);
+    log(cmdR_str);
+    //返回命令根据16进制转化为字符串
 }
 
 
 void MainWindow::handleHasNewWifiConnection(int index)
 {
-    //log(QString("Module %1 connected!").arg(index));
+    QString successInfo=QString("Module %1 connected!").arg(index);
+    log(successInfo);
 }
 
 void MainWindow::setCustomPlotPattern()
@@ -570,24 +604,4 @@ void MainWindow::on_pushButton_record_clicked()
 void MainWindow::handleRecordNameChanged()
 {
     ui->pushButton_record->setEnabled(isFileNameValid());
-}
-
-void MainWindow::on_lineEdit_port_cursorPositionChanged(int arg1, int arg2)
-{
-
-}
-
-void MainWindow::on_customPlot1_destroyed()
-{
-
-}
-
-void MainWindow::on_customPlot_customContextMenuRequested(const QPoint &pos)
-{
-
-}
-
-void MainWindow::on_comboBox_channel_currentTextChanged(const QString &arg1)
-{
-
 }

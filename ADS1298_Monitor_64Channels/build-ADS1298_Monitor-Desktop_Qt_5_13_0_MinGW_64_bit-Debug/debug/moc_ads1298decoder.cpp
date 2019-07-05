@@ -69,17 +69,17 @@ static const uint qt_meta_data_Ads1298Decoder[] = {
 
  // signals: name, argc, parameters, tag, flags
        1,    2,   44,    2, 0x06 /* Public */,
-       6,    2,   49,    2, 0x06 /* Public */,
-       8,    1,   54,    2, 0x06 /* Public */,
+       6,    1,   49,    2, 0x06 /* Public */,
+       8,    1,   52,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       9,    0,   57,    2, 0x08 /* Private */,
-      10,    0,   58,    2, 0x08 /* Private */,
-      11,    0,   59,    2, 0x08 /* Private */,
+       9,    0,   55,    2, 0x08 /* Private */,
+      10,    0,   56,    2, 0x08 /* Private */,
+      11,    0,   57,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, 0x80000000 | 4,    3,    5,
-    QMetaType::Void, QMetaType::Int, QMetaType::Char,    3,    7,
+    QMetaType::Void, QMetaType::Char,    7,
     QMetaType::Void, QMetaType::Int,    3,
 
  // slots: parameters
@@ -97,7 +97,7 @@ void Ads1298Decoder::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->hasNewDataPacket((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< double*(*)>(_a[2]))); break;
-        case 1: _t->hasNewCmdReply((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< char(*)>(_a[2]))); break;
+        case 1: _t->hasNewCmdReply((*reinterpret_cast< char(*)>(_a[1]))); break;
         case 2: _t->hasNewWifiConnection((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->handleWifiNewConnection(); break;
         case 4: _t->handleWifiReceiveNewData(); break;
@@ -114,7 +114,7 @@ void Ads1298Decoder::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             }
         }
         {
-            using _t = void (Ads1298Decoder::*)(int , char );
+            using _t = void (Ads1298Decoder::*)(char );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Ads1298Decoder::hasNewCmdReply)) {
                 *result = 1;
                 return;
@@ -178,9 +178,9 @@ void Ads1298Decoder::hasNewDataPacket(int _t1, double * _t2)
 }
 
 // SIGNAL 1
-void Ads1298Decoder::hasNewCmdReply(int _t1, char _t2)
+void Ads1298Decoder::hasNewCmdReply(char _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 

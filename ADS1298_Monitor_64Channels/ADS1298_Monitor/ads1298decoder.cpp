@@ -5,7 +5,7 @@ Ads1298Decoder::Ads1298Decoder(quint16 port,int index, QObject *parent):   // th
 {
     mode = 0;
     parseState = PS_IDLE;   //parse the wifi state, PS_IDLE--the idle mode
-    socket = 0;
+    socket = nullptr;
     server = new QTcpServer(this);  //create the TCP server
     server->listen(QHostAddress::Any,port);   //listen the port number
     connect(server,SIGNAL(newConnection()),this,SLOT(handleWifiNewConnection()));   //
@@ -94,7 +94,7 @@ void Ads1298Decoder::parse(byte dat)           //
                 decodingNewData();              // decoding data, call the function
                 break;
             case 0x03:                          // the command
-                emit hasNewCmdReply(index,dataBuffer[0]);  // complement the command ,emit the signal
+                emit hasNewCmdReply(dataBuffer[0]);  // complement the command ,emit the signal
                 break;
             }
         }
