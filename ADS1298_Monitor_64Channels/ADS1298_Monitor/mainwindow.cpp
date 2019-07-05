@@ -40,7 +40,7 @@ MainWindow::~MainWindow()                        // the Destructor
     int chNum = module.length()*CH_NUM;
     for(int i=0;i<chNum;i++)
     {
-        delete notchfilters[i];
+        delete notchfilters_50[i];
         delete notchfilters_100[i];
         delete hpfilters[i];
         delete rawData[i];
@@ -146,18 +146,21 @@ void MainWindow::refreshChannelLabels()
 void MainWindow::refreshIIRFilters()
 {
     int chNum = module.length()*CH_NUM;
+    //Every module has 16 channels
+    //There are 4 modules in typical instance of experiment
+    //There are 4*16=64 channels in total
     //According to the number of modules
-    for(int i=0;i<chNum;i++)
+    for(int i=0;i<chNum;i++)//for every channel (64)
     {
-        IIRFilter* nf = new IIRFilter();
+        IIRFilter* nf_50 = new IIRFilter();
         IIRFilter* nf_100 = new IIRFilter();
         IIRFilter* hp = new IIRFilter();
         
         hp->initFilter(ahp,bhp,1,5);
-        nf->initFilter(anotch,bnotch,7,7);
+        nf_50->initFilter(anotch,bnotch,7,7);
         nf_100->initFilter(anotch1,bnotch1,3,3);
         
-        notchfilters.append(nf);
+        notchfilters_50.append(nf_50);
         notchfilters_100.append(nf_100);
         hpfilters.append(hp);
     }
@@ -263,35 +266,37 @@ double MainWindow::getPlotMin(QQueue<double> &plotData)
     return min;
 }
 
-void MainWindow::handleHasNewDataPacket(int index, double *newDP)      // the slot signal
+void MainWindow::handleHasNewDataPacket(int module_index, double *newDP)      // the slot signal
 {
     double fdata[CH_NUM];
     for(int i=0; i<CH_NUM; i++)
     {
         // i+index*CH_NUM---the data index associated with the Module index
-        rawData[i+index*CH_NUM]->append(newDP[i]);                                  //rawData
-        double fd = notchfilters[i+index*CH_NUM]->filter(newDP[i]);                 //50Hz_notchfilters
-        fd = notchfilters_100[i+index*CH_NUM]->filter(fd);                          //100Hz_notchfilter
-        filterData[i+index*CH_NUM]->append(hpfilters[i+index*CH_NUM]->filter(fd));  //20Hz_HighPassfilter
-        fdata[i] = fd;                                                              //filteredData
+        double fd;
+        fd = notchfilters_50[i+module_index*CH_NUM]->filter(newDP[i]);                 //50Hz_notchfilters
+        fd = notchfilters_100[i+module_index*CH_NUM]->filter(fd);                      //100Hz_notchfilter
+        fd = hpfilters[i+module_index*CH_NUM]->filter(fd);                             //20Hz_HighPassfilter
+        filterData[i+module_index*CH_NUM]->append(fd);                                 //filterData
+        rawData[i+module_index*CH_NUM]->append(newDP[i]);                              //rawData
+        fdata[i] = fd;
     }
 
     if(isRecording)                                        //isRecording is True, Then record the data
     {
         for(int i=0; i<CH_NUM; i++)
         {
-            *rOut_raw[index]<<newDP[i]<<'\t';
+            *rOut_raw[module_index]<<newDP[i]<<'\t';
         }
-        *rOut_raw[index]<<'\n';                            // Module---index
+        *rOut_raw[module_index]<<'\n';                            // Module---index
         for(int i=0; i<CH_NUM; i++)
         {
-            *rOut[index]<<fdata[i]<<'\t';
+            *rOut[module_index]<<fdata[i]<<'\t';
         }
-        *rOut[index]<<'\n';                                // Module---index
+        *rOut[module_index]<<'\n';                                // Module---index
     }
 
     int chIndex = ui->comboBox_channel->currentIndex();
-    if(int(chIndex/CH_NUM)==index)
+    if(int(chIndex/CH_NUM)==module_index)
     {
         updatePlotData(chIndex);
     }
