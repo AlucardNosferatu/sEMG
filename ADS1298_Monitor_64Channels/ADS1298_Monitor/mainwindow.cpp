@@ -301,19 +301,36 @@ double MainWindow::getPlotMin(QQueue<double> &plotData)
 void MainWindow::handleHasNewDataPacket(int module_index, double *newDP)      // the slot signal
 {
     double fdata[CH_NUM];
+    double ddata[CH_NUM];
     for(int i=0; i<CH_NUM; i++)
     {
         // i+index*CH_NUM---the data index associated with the Module index
         float fd;
+        float dd=0;
+        float prev=0;
         fd = notchfilters_50[i+module_index*CH_NUM]->filter(static_cast<float>(newDP[i]));                  //50Hz_notchfilters
         fd = notchfilters_100[i+module_index*CH_NUM]->filter(fd);                                           //100Hz_notchfilter
         fd = hpfilters[i+module_index*CH_NUM]->filter(fd);                                                  //20Hz_HighPassfilter
+        if(i==0){
+            dd=0;
+            prev=fd;
+        }
+        else{
+            dd=fd-prev;
+            prev=fd;
+        }
+        detrendedData[i+module_index*CH_NUM]->append(static_cast<const double>(dd));
         filterData[i+module_index*CH_NUM]->append(static_cast<const double>(fd));                           //filterData
         rawData[i+module_index*CH_NUM]->append(newDP[i]);                                                   //rawData
         fdata[i] = static_cast<double>(fd);
+        ddata[i] = static_cast<double>(dd);
     }
     if(isRecording)                                        //isRecording is True, Then record the data
     {
+        for(int i=0; i<CH_NUM; i++)
+        {
+            *rOut_det[module_index]<<ddata[i]<<'\t';
+        }
         for(int i=0; i<CH_NUM; i++)
         {
             *rOut_raw[module_index]<<newDP[i]<<'\t';
@@ -546,8 +563,10 @@ void MainWindow::on_pushButton_record_clicked()
             QString n = ui->spinBox_fileName->text();
             rFile.clear();
             rFile_raw.clear();
+            rFile_det.clear();
             rOut.clear();
             rOut_raw.clear();
+            rOut_det.clear();
             int num = module.length();
 
             for(int i=0; i<num; i++)
@@ -569,19 +588,32 @@ void MainWindow::on_pushButton_record_clicked()
                 rf_r->open(QIODevice::WriteOnly);
 
                 QTextStream* ro_r = new QTextStream(rf_r);
-                *ro_r<<"Time\t";
+                //*ro_r<<"Time\t";
                 for(int i=0; i<CH_NUM; i++)
                     *ro_r<<"EMG"<<i<<'\t';
                 *ro_r<<'\n';
                 rFile_raw.append(rf_r);
                 rOut_raw.append(ro_r);
+
+                QString fn_det = QString("%1/%2%3_%4_det.txt").arg(dir).arg(fileName).arg(n).arg(i);
+                QFile * rf_d = new QFile(fn_det);
+                rf_d->open(QIODevice::WriteOnly);
+
+                QTextStream* ro_d = new QTextStream(rf_d);
+                for(int i=0; i<CH_NUM; i++)
+                    *ro_d<<"EMG"<<i<<'\t';
+                *ro_d<<'\n';
+                rFile_raw.append(rf_d);
+                rOut_raw.append(ro_d);
+
             }
             isRecording = true;
             ui->pushButton_record->setText("Stop");
         }
 		else 
-		{
-                        //log(tr("File name invalid!"));
+        {
+            QString invalid=tr("File name invalid!");
+            log(invalid);
 		}
 
     }

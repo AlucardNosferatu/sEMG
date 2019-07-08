@@ -40,6 +40,7 @@ private:
     QList<Ads1298Decoder*> module; //the Ads1298Decoder is a QObject,store the QObject and its subclass's pointer
     QList<QList<double>*> rawData;
     QList<QList<double>*> filterData;
+    QList<QList<double>*> detrendedData;
     QList<IIRFilter*> notchfilters_50;
     QList<IIRFilter*> notchfilters_100;
     QList<IIRFilter*> hpfilters;
@@ -93,7 +94,8 @@ private:
     bool isRecording;     // the state whether recornding the data or not, When record the data,the value is true
     QList<QFile*> rFile_raw;  //Store the pointers as variables...write raw data
     QList<QFile*> rFile;      //us the pointers as variables,,,write filtered data
-    QList<QTextStream*> rOut_raw, rOut;
+    QList<QFile*> rFile_det;
+    QList<QTextStream*> rOut_raw, rOut, rOut_det;
     QPixmap ledIcon;  //  The Led glitter when recording the data
 
     //QQueue<double> rawEMGData[CH_NUM];
