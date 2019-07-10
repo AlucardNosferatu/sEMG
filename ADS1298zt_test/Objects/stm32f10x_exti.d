@@ -1,4 +1,4 @@
-.\objects\stm32f10x_exti.o: driver\src\stm32f10x_exti.c
+.\objects\stm32f10x_exti.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\src\stm32f10x_exti.c
 .\objects\stm32f10x_exti.o: .\driver\inc\stm32f10x_exti.h
 .\objects\stm32f10x_exti.o: .\CMSIS\stm32f10x.h
 .\objects\stm32f10x_exti.o: .\CMSIS\core_cm3.h

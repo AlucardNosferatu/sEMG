@@ -8,7 +8,6 @@
 //    其他,期待应答结果的位置(str的位置)
 u8* atk_8266_check_cmd(u8 *str)
 {
-	
 	char *strx=0;
 	if(USART1_RX_STA&0X8000)		//接收到一次数据了
 	{ 

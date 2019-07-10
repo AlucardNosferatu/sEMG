@@ -12,7 +12,7 @@ int main()
 
   SystemInit();
 	
-  usart1_Init(921600); 
+  usart1_Init(921600);
 	atk_8266_send_cmd("+++",NULL,200); // +++：退出透传
 	if(atk_8266_send_cmd("AT\r\n","OK",100)) //说明波特率不对
 	{

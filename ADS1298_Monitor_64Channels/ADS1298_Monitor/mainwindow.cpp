@@ -77,7 +77,6 @@ MainWindow::~MainWindow()                        // the Destructor
         delete rawData[i];
         delete filterData[i];
     }
-    
     delete ui;
 }
 

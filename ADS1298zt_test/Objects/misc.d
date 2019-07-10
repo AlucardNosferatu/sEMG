@@ -1,4 +1,4 @@
-.\objects\misc.o: driver\src\misc.c
+.\objects\misc.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\src\misc.c
 .\objects\misc.o: .\driver\inc\misc.h
 .\objects\misc.o: .\CMSIS\stm32f10x.h
 .\objects\misc.o: .\CMSIS\core_cm3.h

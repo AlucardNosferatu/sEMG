@@ -3459,7 +3459,7 @@ debug/mainwindow.o: ../ADS1298_Monitor/mainwindow.cpp ../ADS1298_Monitor/mainwin
 		../ADS1298_Monitor/iirfilter.h \
 		../ADS1298_Monitor/dialogs/fftdialog.h \
 		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/QDialog \
-		../ADS1298_Monitor/ui_mainwindow.h \
+		ui_mainwindow.h \
 		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication \
 		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/QCheckBox \
 		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/QComboBox \
@@ -3472,6 +3472,7 @@ debug/mainwindow.o: ../ADS1298_Monitor/mainwindow.cpp ../ADS1298_Monitor/mainwin
 		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/QStatusBar \
 		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/QTextBrowser \
 		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/QToolBar \
+		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/QVBoxLayout \
 		D:/Qt/5.13.0/mingw73_64/include/QtSerialPort/QSerialPortInfo \
 		D:/Qt/5.13.0/mingw73_64/include/QtSerialPort/qserialportinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\ADS1298_Monitor\mainwindow.cpp
@@ -4165,7 +4166,7 @@ debug/fftdialog.o: ../ADS1298_Monitor/dialogs/fftdialog.cpp ../ADS1298_Monitor/d
 		D:/Qt/5.13.0/mingw73_64/include/QtCore/qfiledevice.h \
 		D:/Qt/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
-		../ADS1298_Monitor/ui_fftdialog.h \
+		ui_fftdialog.h \
 		D:/Qt/5.13.0/mingw73_64/include/QtCore/QVariant \
 		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication \
 		D:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h \
