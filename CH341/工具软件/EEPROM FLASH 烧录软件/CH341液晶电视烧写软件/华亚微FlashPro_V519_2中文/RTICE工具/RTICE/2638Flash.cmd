@@ -1,0 +1,18 @@
+	IsSSTFlash: 0;
+	spiFlashSize: 0x200000;
+    spiFlashSectorSize: 0x1000;
+	spiFlashProto: 0x0;
+	spiFlashClkL:  0x3;
+	spiFlashClkH: 0x3;
+	spiFlashCSH: 0x20;
+	spiFlashCSHold:	0x2;
+	spiFlashCSSet:	0x2;
+ 	spiFlashReadCmd: 0x3;
+ 	spiFlashProgCmd: 0x2;
+ 	spiFlashReadStatusCmd: 0x5	;
+ 	spiFlashWriteStatusCmd:	0x1;
+ 	spiFlashWriteEnCmd:	0x6;
+ 	spiFlashWriteDisCmd:  0x4;
+ 	spiFlashPageEraseCmd: 0x20;
+    spiFlashInProc:	0x1		;
+    spiFlashWriteEn:	0x2	;
