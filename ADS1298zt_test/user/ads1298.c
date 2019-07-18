@@ -233,40 +233,55 @@ void beginReadDataC()               //设置中断
 
 
 void EXTI15_10_IRQHandler(void)             //中断服务函数
-{       
-    int i;
-    u8 tmp[54],sum;
+{
+	int i,j;
+	u8 tmp[4][54],sum;
+	u8 temp[54];
+	for(j=0;j<4;j++){//4 packs
+		if(EXTI_GetITStatus(EXTI_Line12)==SET){
+			for (i=0;i<27;i++)
+			{
+				tmp[j][i] = EMG_SendByte(0xff);//send and read, 27 bytes for 1 module, 54 for 2 modules
+			}
+			disableADS1298(CS1_Port,CS1_Pin);
+			enableADS1298(CS2_Port,CS2_Pin);
+			
+			for (i=0;i<27;i++)
+			{
+				tmp[j][i+27] = EMG_SendByte(0xff);
+			}
+			disableADS1298(CS2_Port,CS2_Pin);
+			enableADS1298(CS1_Port,CS1_Pin);
+		}
+	}
+	for(i=0;i<27;i++){
+		if(i<3){
+			temp[i]=tmp[0][i];
+		}
+		else{
+			temp[i]=tmp[0][i]&0xFC0000+tmp[1][i]&0x3F0000+tmp[2][i]&0x000FC0+tmp[3][i]&0x00003F;
+		}
+	}
+	for(i=0;i<27;i++){
+		if(i<3){
+			temp[i+27]=tmp[0][i+27];
+		}
+		else{
+			temp[i+27]=tmp[0][i+27]&0xFC0000+tmp[1][i+27]&0x3F0000+tmp[2][i+27]&0x000FC0+tmp[3][i+27]&0x00003F;
+		}
+	}
 	
-		if(EXTI_GetITStatus(EXTI_Line12)==SET)
-		{
-				for (i=0;i<27;i++)
-				{
-					tmp[i] = EMG_SendByte(0xff);//send and read, 27 bytes for 1 module, 54 for 2 modules
-				}
-				
-				disableADS1298(CS1_Port,CS1_Pin);
-				enableADS1298(CS2_Port,CS2_Pin);
-				
-				for (i=0;i<27;i++)
-				{
-					tmp[i+27] = EMG_SendByte(0xff);
-				}
-				
-				disableADS1298(CS2_Port,CS2_Pin);
-				enableADS1298(CS1_Port,CS1_Pin);
-				
-				sum=0;
-				usart1_sendByte(0xff);   		 	//包头两个0xff 
-				usart1_sendByte(0xff);
-				usart1_sendByte(0x01);    		//EMG数据命令0x01
-				for (i=0;i<54;i++)            //发送EMG数据
-				{
-						usart1_sendByte(tmp[i]);
-						sum += tmp[i];
-				}
-				usart1_sendByte(sum);//send checksum
-		}				
-		EXTI_ClearITPendingBit(EXTI_Line12);
+	sum=0;
+	usart1_sendByte(0xff);   		 	//包头两个0xff
+	usart1_sendByte(0xff);
+	usart1_sendByte(0x01);    		//EMG数据命令0x01
+	for (i=0;i<54;i++)            //发送EMG数据
+	{
+		usart1_sendByte(temp[i]);
+		sum += tmp[j][i];
+	}
+	usart1_sendByte(sum);//send checksum
+	EXTI_ClearITPendingBit(EXTI_Line12);
 }
 
 u8 shakeHands(GPIO_TypeDef* port, u16 pin)                     //握手
