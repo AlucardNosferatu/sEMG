@@ -100,7 +100,8 @@ int resetADS1298(u8 flag, GPIO_TypeDef* port, u16 pin)                  //对ads1
 		delayMs(100);
 		
 		if(flag==0)
-			r = tryWriteRegister(CONFIG1,0x26,5,port,pin);   // LR Mode: 250 SPS 
+//			r = tryWriteRegister(CONFIG1,0x26,5,port,pin);   // LR Mode: 250 SPS 
+			r = tryWriteRegister(CONFIG1,0xA5,5,port,pin);   // HS Mode: 1k SPS 
 		else
 			r = tryWriteRegister(CONFIG1,0x06,5,port,pin);
 		if (r!=0)
@@ -240,7 +241,7 @@ void EXTI15_10_IRQHandler(void)             //中断服务函数
 		{
 				for (i=0;i<27;i++)
 				{
-					tmp[i] = EMG_SendByte(0xff);
+					tmp[i] = EMG_SendByte(0xff);//send and read, 27 bytes for 1 module, 54 for 2 modules
 				}
 				
 				disableADS1298(CS1_Port,CS1_Pin);

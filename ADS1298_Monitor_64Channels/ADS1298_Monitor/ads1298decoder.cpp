@@ -113,7 +113,7 @@ void Ads1298Decoder::decodingNewData()
     {
         dataIndex += 3;
 
-        unsigned char data[3];
+        unsigned char data[3];//24状态标志位
         for(int i=0; i<8; i++)
         {
             for(int j=0; j<3;j++)
