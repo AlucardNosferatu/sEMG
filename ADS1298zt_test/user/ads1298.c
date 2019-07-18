@@ -259,7 +259,13 @@ void EXTI15_10_IRQHandler(void)             //中断服务函数
 			temp[i]=tmp[0][i];
 		}
 		else{
-			temp[i]=tmp[0][i]&0xFC0000+tmp[1][i]&0x3F0000+tmp[2][i]&0x000FC0+tmp[3][i]&0x00003F;
+			temp[i]=tmp[0][i]&0xFC;
+			i++;
+			temp[i]=tmp[1][i-1]&0xFC;			
+			i++;
+			temp[i]=tmp[2][i-2]&0xFC;			
+			i++;
+			temp[i]=tmp[3][i-3]&0xFC;
 		}
 	}
 	for(i=0;i<27;i++){
@@ -267,7 +273,13 @@ void EXTI15_10_IRQHandler(void)             //中断服务函数
 			temp[i+27]=tmp[0][i+27];
 		}
 		else{
-			temp[i+27]=tmp[0][i+27]&0xFC0000+tmp[1][i+27]&0x3F0000+tmp[2][i+27]&0x000FC0+tmp[3][i+27]&0x00003F;
+			temp[i+27]=tmp[0][i+27]&0xFC;
+			i++;
+			temp[i+27]=tmp[1][i+26]&0xFC;			
+			i++;
+			temp[i+27]=tmp[2][i+25]&0xFC;			
+			i++;
+			temp[i+27]=tmp[3][i+24]&0xFC;
 		}
 	}
 	

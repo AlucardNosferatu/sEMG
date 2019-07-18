@@ -5,7 +5,7 @@
 
 void delayMs(u32 time);
 void delay_ms(u16 time);
-void delayL();
+void delayL(void);
 
 
 #endif
