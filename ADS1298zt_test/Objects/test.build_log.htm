@@ -27,11 +27,20 @@ Project File Date:  07/18/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'test'
-compiling usart.c...
+compiling main.c...
+user\main.c(11): warning:  #550-D: variable "r1"  was set but never used
+  	u8 r1, r2, c1, c2;
+user\main.c(11): warning:  #550-D: variable "r2"  was set but never used
+  	u8 r1, r2, c1, c2;
+user\main.c(11): warning:  #550-D: variable "c1"  was set but never used
+  	u8 r1, r2, c1, c2;
+user\main.c(11): warning:  #550-D: variable "c2"  was set but never used
+  	u8 r1, r2, c1, c2;
+user\main.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=6392 RO-data=336 RW-data=24 ZI-data=2656  
+Program Size: Code=6144 RO-data=336 RW-data=24 ZI-data=2656  
 FromELF: creating hex file...
-".\Objects\test.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\test.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -66,8 +75,8 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.2.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\startup_stm32f10x_hd.s
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
 
@@ -83,12 +92,12 @@ Package Vendor: Keil
       Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
 
    * Component: Keil::Device:StdPeriph Drivers:GPIO:3.5.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
 
    * Component: Keil::Device:StdPeriph Drivers:RCC:3.5.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
 
    * Component: Keil::Device:StdPeriph Drivers:SPI:3.5.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_spi.h
@@ -101,7 +110,7 @@ Package Vendor: Keil
    * Component: Keil::Device:StdPeriph Drivers:USART:3.5.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_usart.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
