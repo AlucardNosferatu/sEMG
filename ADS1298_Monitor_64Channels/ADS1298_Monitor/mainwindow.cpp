@@ -76,6 +76,7 @@ MainWindow::~MainWindow()                        // the Destructor
         delete hpfilters[i];
         delete rawData[i];
         delete filterData[i];
+        delete detrendedData[i];
     }
     delete ui;
 }
@@ -108,7 +109,7 @@ void MainWindow::on_pushButton_connectWifi_clicked()
         Ads1298Decoder* ads = new Ads1298Decoder(static_cast<quint16>(ports[i].toUInt()),i,this);//create a pointer pointing to the class Ads1298Decoder
         module.append(ads);
         connect(module[i],SIGNAL(hasNewDataPacket(int,double*)),this,SLOT(handleHasNewDataPacket(int,double*)));
-        connect(module[i],SIGNAL(hasNewCmdReply(int,char)),this,SLOT(handleHasNewCmdReply(int,char)));
+        connect(module[i],SIGNAL(hasNewCmdReply(char)),this,SLOT(handleHasNewCmdReply(char)));
         connect(module[i],SIGNAL(hasNewWifiConnection(int)),this,SLOT(handleHasNewWifiConnection(int)));
     }
     setCustomPlotPattern();
@@ -206,8 +207,10 @@ void MainWindow::refreshDataBuffer()
     {
         QList<double>* rd = new QList<double>();
         QList<double>* fd = new QList<double>();
+        QList<double>* dd = new QList<double>();
         rawData.append(rd);
         filterData.append(fd);
+        detrendedData.append(dd);
     }
 }
 

@@ -27,20 +27,18 @@ Project File Date:  07/18/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'test'
-compiling main.c...
-user\main.c(11): warning:  #550-D: variable "r1"  was set but never used
-  	u8 r1, r2, c1, c2;
-user\main.c(11): warning:  #550-D: variable "r2"  was set but never used
-  	u8 r1, r2, c1, c2;
-user\main.c(11): warning:  #550-D: variable "c1"  was set but never used
-  	u8 r1, r2, c1, c2;
-user\main.c(11): warning:  #550-D: variable "c2"  was set but never used
-  	u8 r1, r2, c1, c2;
-user\main.c: 4 warnings, 0 errors
+compiling ads1298.c...
+user\ads1298.c(134): warning:  #177-D: variable "n"  was declared but never referenced
+  	int r=-1,n=1;
+user\ads1298.c(237): warning:  #177-D: variable "j"  was declared but never referenced
+  	int i,j;
+user\ads1298.c(239): warning:  #177-D: variable "temp"  was declared but never referenced
+  	u8 temp[54];
+user\ads1298.c: 3 warnings, 0 errors
 linking...
 Program Size: Code=6144 RO-data=336 RW-data=24 ZI-data=2656  
 FromELF: creating hex file...
-".\Objects\test.axf" - 0 Error(s), 4 Warning(s).
+".\Objects\test.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -110,7 +108,7 @@ Package Vendor: Keil
    * Component: Keil::Device:StdPeriph Drivers:USART:3.5.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_usart.c
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
