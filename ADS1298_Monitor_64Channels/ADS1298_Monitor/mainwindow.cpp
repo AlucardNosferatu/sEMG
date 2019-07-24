@@ -556,7 +556,8 @@ void MainWindow::on_pushButton_workBench_clicked()
 
 void MainWindow::on_pushButton_record_clicked()
 {
-    if(ui->pushButton_record->text()=="Record")             // when the button show "record" and putting down the button
+    if(!isRecording)
+    //if(ui->pushButton_record->text()=="Record")             // when the button show "record" and putting down the button
     {
         if(isFileNameValid())                               // The defined record file name is valid
         {
@@ -582,8 +583,10 @@ void MainWindow::on_pushButton_record_clicked()
                 for(int i=0; i<CH_NUM; i++)
                     *ro<<"EMG"<<i<<'\t';
                 *ro<<'\n';
+
                 rFile.append(rf);
                 rOut.append(ro);
+
 
                 QString fn_raw = QString("%1/%2%3_%4_raw.txt").arg(dir).arg(fileName).arg(n).arg(i);
                 QFile * rf_r = new QFile(fn_raw);
@@ -594,8 +597,10 @@ void MainWindow::on_pushButton_record_clicked()
                 for(int i=0; i<CH_NUM; i++)
                     *ro_r<<"EMG"<<i<<'\t';
                 *ro_r<<'\n';
+
                 rFile_raw.append(rf_r);
                 rOut_raw.append(ro_r);
+
 
                 QString fn_det = QString("%1/%2%3_%4_det.txt").arg(dir).arg(fileName).arg(n).arg(i);
                 QFile * rf_d = new QFile(fn_det);
@@ -605,12 +610,13 @@ void MainWindow::on_pushButton_record_clicked()
                 for(int i=0; i<CH_NUM; i++)
                     *ro_d<<"EMG"<<i<<'\t';
                 *ro_d<<'\n';
-                rFile_raw.append(rf_d);
-                rOut_raw.append(ro_d);
+
+                rFile_det.append(rf_d);
+                rOut_det.append(ro_d);
 
             }
             isRecording = true;
-            ui->pushButton_record->setText("Stop");
+            //ui->pushButton_record->setText("Stop");
         }
 		else 
         {
@@ -619,7 +625,7 @@ void MainWindow::on_pushButton_record_clicked()
 		}
 
     }
-    else if(ui->pushButton_record->text()=="Stop")                           // when the button show "stop" and putting down the button
+    else //if(ui->pushButton_record->text()=="Stop")                           // when the button show "stop" and putting down the button
     {
         isRecording = false;
         ui->label_Icon->clear();
@@ -627,8 +633,9 @@ void MainWindow::on_pushButton_record_clicked()
         {
             rFile[i]->close();
             rFile_raw[i]->close();
+            rFile_det[i]->close();
         }
-        ui->pushButton_record->setText("Record");
+        //ui->pushButton_record->setText("Record");
         int n = ui->spinBox_fileName->value();
         ui->spinBox_fileName->setValue(n+1);
     }
@@ -637,5 +644,5 @@ void MainWindow::on_pushButton_record_clicked()
 
 void MainWindow::handleRecordNameChanged()
 {
-    ui->pushButton_record->setEnabled(isFileNameValid());
+   ui->pushButton_record->setEnabled(isFileNameValid());
 }
