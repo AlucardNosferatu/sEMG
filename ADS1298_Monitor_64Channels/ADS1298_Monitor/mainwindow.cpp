@@ -556,8 +556,8 @@ void MainWindow::on_pushButton_workBench_clicked()
 
 void MainWindow::on_pushButton_record_clicked()
 {
-    if(!isRecording)
-    //if(ui->pushButton_record->text()=="Record")             // when the button show "record" and putting down the button
+    //if(!isRecording)
+    if(ui->pushButton_record->text()=="Record")             // when the button show "record" and putting down the button
     {
         if(isFileNameValid())                               // The defined record file name is valid
         {
@@ -616,7 +616,7 @@ void MainWindow::on_pushButton_record_clicked()
 
             }
             isRecording = true;
-            //ui->pushButton_record->setText("Stop");
+            ui->pushButton_record->setText("Stop");
         }
 		else 
         {
@@ -625,7 +625,7 @@ void MainWindow::on_pushButton_record_clicked()
 		}
 
     }
-    else //if(ui->pushButton_record->text()=="Stop")                           // when the button show "stop" and putting down the button
+    else if(ui->pushButton_record->text()=="Stop")                           // when the button show "stop" and putting down the button
     {
         isRecording = false;
         ui->label_Icon->clear();
@@ -635,7 +635,7 @@ void MainWindow::on_pushButton_record_clicked()
             rFile_raw[i]->close();
             rFile_det[i]->close();
         }
-        //ui->pushButton_record->setText("Record");
+        ui->pushButton_record->setText("Record");
         int n = ui->spinBox_fileName->value();
         ui->spinBox_fileName->setValue(n+1);
     }
