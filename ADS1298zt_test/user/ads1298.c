@@ -103,7 +103,8 @@ int resetADS1298(u8 flag, GPIO_TypeDef* port, u16 pin)                  //¶Ôads1
 			//r = tryWriteRegister(CONFIG1,0x26,5,port,pin);   // LR Mode: 250 SPS 
 			r = tryWriteRegister(CONFIG1,0xA5,5,port,pin);   // HS Mode: 1k SPS 
 		else
-			r = tryWriteRegister(CONFIG1,0x06,5,port,pin);
+			//r = tryWriteRegister(CONFIG1,0x06,5,port,pin);
+			r = tryWriteRegister(CONFIG1,0x85,5,port,pin);		
 		if (r!=0)
         return -1;
 		
