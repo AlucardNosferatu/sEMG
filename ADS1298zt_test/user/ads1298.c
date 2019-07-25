@@ -101,13 +101,12 @@ int resetADS1298(u8 flag, GPIO_TypeDef* port, u16 pin)                  //对ads1
 	
 		delayMs(100);
 		
-		
 #ifdef HIGHSPEED
-		if(flag==0)r = tryWriteRegister(CONFIG1,0xA5,5,port,pin);     // HS Mode: 1k  SPS BIN: 1010 0101
-		else r = tryWriteRegister(CONFIG1,0x85,5,port,pin);	   // HS Mode: 1k  SPS BIN: 1000 0101	
+		if(flag==0)r = tryWriteRegister(CONFIG1,0xA6,5,port,pin);     // HS Mode: 1k  SPS BIN: 1010 0101
+		else r = tryWriteRegister(CONFIG1,0x86,5,port,pin);						// HS Mode: 1k  SPS BIN: 1000 0101	
 #else
-		if(flag==0)r = tryWriteRegister(CONFIG1,0x26,5,port,pin);   // LR Mode: 250 SPS BIN: 0010 0110
-		else r = tryWriteRegister(CONFIG1,0x06,5,port,pin);   // LR Mode: 250 SPS BIN: 0000 0110
+		if(flag==0)r = tryWriteRegister(CONFIG1,0x26,5,port,pin);			// LR Mode: 250 SPS BIN: 0010 0110
+		else r = tryWriteRegister(CONFIG1,0x06,5,port,pin);						// LR Mode: 250 SPS BIN: 0000 0110
 #endif
 		if (r!=0)return -1;
 		
@@ -245,27 +244,26 @@ void EXTI15_10_IRQHandler(void)             //中断服务函数
 #endif
 	if(EXTI_GetITStatus(EXTI_Line12)==SET){
 #ifdef COMPRESS
-		for(j=0;j<4;j++)//4 packs{
-			
-		}
-		for(i=0;i<27;i++){
-			if(i<3)temp[i]=tmp[0][i];
-			else{
-				temp[i]=tmp[0][i]&0xFC+((tmp[1][i]&0xC0)>>6);
-				i++;
-				temp[i]=((tmp[1][i-1]&0x3C)<<2)+((tmp[2][i-1]&0xF0)>>4);
-				i++;
-				temp[i]=((tmp[2][i-2]&0x0C)<<4)+((tmp[3][i-2]&0xFC)>>2);
+		for(j=0;j<4;j++){//4 packs
+			for(i=0;i<27;i++){
+				if(i<3)temp[i]=tmp[0][i];
+				else{
+					temp[i]=tmp[0][i]&0xFC+((tmp[1][i]&0xC0)>>6);
+					i++;
+					temp[i]=((tmp[1][i-1]&0x3C)<<2)+((tmp[2][i-1]&0xF0)>>4);
+					i++;
+					temp[i]=((tmp[2][i-2]&0x0C)<<4)+((tmp[3][i-2]&0xFC)>>2);
+				}
 			}
-		}
-		for(i=0;i<27;i++){
-			if(i<3)temp[i+27]=tmp[0][i+27];
-			else{
-				temp[i+27]=tmp[0][i+27]&0xFC+((tmp[1][i+27]&0xC0)>>6);
-				i++;
-				temp[i+27]=((tmp[1][i+26]&0x3C)<<2)+((tmp[2][i+26]&0xF0)>>4);
-				i++;
-				temp[i+27]=((tmp[2][i+25]&0x0C)<<4)+((tmp[3][i+25]&0xFC)>>2);
+			for(i=0;i<27;i++){
+				if(i<3)temp[i+27]=tmp[0][i+27];
+				else{
+					temp[i+27]=tmp[0][i+27]&0xFC+((tmp[1][i+27]&0xC0)>>6);
+					i++;
+					temp[i+27]=((tmp[1][i+26]&0x3C)<<2)+((tmp[2][i+26]&0xF0)>>4);
+					i++;
+					temp[i+27]=((tmp[2][i+25]&0x0C)<<4)+((tmp[3][i+25]&0xFC)>>2);
+				}
 			}
 		}
 		/*
