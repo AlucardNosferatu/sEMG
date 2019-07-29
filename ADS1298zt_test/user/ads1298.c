@@ -4,6 +4,8 @@
 #define HIGHSPEED
 //#define COMPRESS
 
+int count=0;
+
 void ads1298_init(void)      //ads1298³õÊ¼»¯//IO¿Ú³õÊ¼»¯
 {
     GPIO_InitTypeDef GPIO_InitStructure;
@@ -102,8 +104,8 @@ int resetADS1298(u8 flag, GPIO_TypeDef* port, u16 pin)                  //¶Ôads1
 		delayMs(100);
 		
 #ifdef HIGHSPEED
-		if(flag==0)r = tryWriteRegister(CONFIG1,0xA6,5,port,pin);     // HS Mode: 1k  SPS BIN: 1010 0101
-		else r = tryWriteRegister(CONFIG1,0x86,5,port,pin);						// HS Mode: 1k  SPS BIN: 1000 0101	
+		if(flag==0)r = tryWriteRegister(CONFIG1,0xA5,5,port,pin);     // HS Mode: 1k  SPS BIN: 1010 0101
+		else r = tryWriteRegister(CONFIG1,0x85,5,port,pin);						// HS Mode: 1k  SPS BIN: 1000 0101	
 #else
 		if(flag==0)r = tryWriteRegister(CONFIG1,0x26,5,port,pin);			// LR Mode: 250 SPS BIN: 0010 0110
 		else r = tryWriteRegister(CONFIG1,0x06,5,port,pin);						// LR Mode: 250 SPS BIN: 0000 0110
@@ -133,7 +135,7 @@ int resetADS1298(u8 flag, GPIO_TypeDef* port, u16 pin)                  //¶Ôads1
 
 int configForSquarewaveTest(GPIO_TypeDef* port,u16 pin)       //ÅäÖÃ³É·½²¨²âÁ¿Ä£Ê½
 { 
-	int r=-1,n=1;
+	int r=-1;
 	u8 addr;
 	
 	r = tryWriteRegister(CONFIG2,0x10,5,port,pin);   // signal internal
@@ -244,7 +246,19 @@ void EXTI15_10_IRQHandler(void)             //ÖÐ¶Ï·þÎñº¯Êý
 #endif
 	if(EXTI_GetITStatus(EXTI_Line12)==SET){
 #ifdef COMPRESS
-		for(j=0;j<4;j++){//4 packs
+		for (i=0;i<27;i++){
+			tmp[count][i] = EMG_SendByte(0xff);//send and read, 27 bytes for 1 module, 54 for 2 modules
+		}
+		disableADS1298(CS1_Port,CS1_Pin);
+		enableADS1298(CS2_Port,CS2_Pin);
+		for (i=0;i<27;i++){
+			tmp[count][i+27] = EMG_SendByte(0xff);
+		}
+		disableADS1298(CS2_Port,CS2_Pin);
+		enableADS1298(CS1_Port,CS1_Pin);
+		
+		count++;
+		if(count==3){
 			for(i=0;i<27;i++){
 				if(i<3)temp[i]=tmp[0][i];
 				else{
@@ -265,7 +279,19 @@ void EXTI15_10_IRQHandler(void)             //ÖÐ¶Ï·þÎñº¯Êý
 					temp[i+27]=((tmp[2][i+25]&0x0C)<<4)+((tmp[3][i+25]&0xFC)>>2);
 				}
 			}
+			sum=0;
+			usart1_sendByte(0xff);   		 	//°üÍ·Á½¸ö0xff
+			usart1_sendByte(0xff);
+			usart1_sendByte(0x01);    		//EMGÊý¾ÝÃüÁî0x01
+			for (i=0;i<54;i++){           //·¢ËÍEMGÊý¾
+				usart1_sendByte(temp[i]);
+				sum += temp[i];
+			}
+			usart1_sendByte(sum);//send checksum
 		}
+		
+		
+
 		/*
 		AAAA AABB
 		BBBB CCCC
@@ -286,26 +312,23 @@ void EXTI15_10_IRQHandler(void)             //ÖÐ¶Ï·þÎñº¯Êý
 		}
 		disableADS1298(CS1_Port,CS1_Pin);
 		enableADS1298(CS2_Port,CS2_Pin);
+		
 		for (i=0;i<27;i++){
 			tmp[0][i+27] = EMG_SendByte(0xff);
 		}
 		disableADS1298(CS2_Port,CS2_Pin);
 		enableADS1298(CS1_Port,CS1_Pin);
-#endif
+		
 		sum=0;
 		usart1_sendByte(0xff);   		 	//°üÍ·Á½¸ö0xff
 		usart1_sendByte(0xff);
 		usart1_sendByte(0x01);    		//EMGÊý¾ÝÃüÁî0x01
+
 		for (i=0;i<54;i++){           //·¢ËÍEMGÊý¾Ý
-#ifdef COMPRESS
-			usart1_sendByte(temp[i]);
-			sum += temp[i];
-#else
 			usart1_sendByte(tmp[0][i]);
 			sum += tmp[0][i];
-#endif
 		}
-		usart1_sendByte(sum);//send checksum
+#endif
 	}
 	EXTI_ClearITPendingBit(EXTI_Line12);
 }
