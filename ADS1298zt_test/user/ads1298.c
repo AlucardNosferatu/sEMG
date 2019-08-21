@@ -1,7 +1,7 @@
 #include "ads1298.h"
 #include "schedule.h"
 #include "stm32f10x_exti.h"
-#define HIGHSPEED
+//#define HIGHSPEED
 //#define COMPRESS
 
 int count=0;
@@ -328,6 +328,7 @@ void EXTI15_10_IRQHandler(void)             //中断服务函数
 			usart1_sendByte(tmp[0][i]);
 			sum += tmp[0][i];
 		}
+		usart1_sendByte(sum);//send checksum
 #endif
 	}
 	EXTI_ClearITPendingBit(EXTI_Line12);
