@@ -6,13 +6,7 @@
 //#include "led.h"
 int r;
 
-int main()
-{
-	u8 r1, r2, c1, c2;
-
-  SystemInit();
-	
-  usart1_Init(921600);
+void ESP8266(void){
 	atk_8266_send_cmd("+++",NULL,200); // +++£ºÍË³öÍ¸´«
 	if(atk_8266_send_cmd("AT\r\n","OK",100)) //ËµÃ÷²¨ÌØÂÊ²»¶Ô
 	{
@@ -27,20 +21,61 @@ int main()
 	atk_8266_send_cmd("AT+CWMODE=1\r\n","OK",500); //ÉèÖÃÎªSTAÄ£Ê½
 	//atk_8266_send_cmd("AT+RST\r\n","ready",500); //ÖØÆôÄ£¿é
 	
-	atk_8266_send_cmd("AT+CWJAP_CUR=\"HARLab604_2G\",\"HARLab604!\"\r\n","OK",2000);//ÁÙÊ±Á¬½ÓAPÍøÂç£¬²»±£´æµ½Flash£¬µÚÒ»¸ö²ÎÊýÎªÄ¿±êAPµÄSSID£¨ÎÞÏßÍøÂçÃû³Æ£©£¬µÚ¶þ¸ö²ÎÊýÎªÎÞÏßÍøÂçÃÜÂë£
+	atk_8266_send_cmd("AT+CWJAP_CUR=\"HARLab609_2G\",\"HARLab609!\"\r\n","OK",2000);//ÁÙÊ±Á¬½ÓAPÍøÂç£¬²»±£´æµ½Flash£¬µÚÒ»¸ö²ÎÊýÎªÄ¿±êAPµÄSSID£¨ÎÞÏßÍøÂçÃû³Æ£©£¬µÚ¶þ¸ö²ÎÊýÎªÎÞÏßÍøÂçÃÜÂë
 	//ÕâÀï¼ÓÊÇ·ñÁ¬½ÓµÄµÈ´ýÌõ¼þ
 	
 	
 	atk_8266_send_cmd("AT+CIPMUX=0\r\n","OK",500);//Ê¹ÄÜµ¥Á¬½Ó
 	//¶Ë¿ÚºÅÊÇ×Ô¼º¶¨ÒåµÄ£¬Ö»Òª¿Í»§¶ËºÍ·þÎñ¶ËÒ»ÖÂ¾ÍÐÐ
 	
-	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.1.41\",8081\r\n","OK",2000); //´´½¨TCPÁ¬½Ó£¬Á¬½Óserver¶Ë£¬µÚÒ»¸ö²ÎÊýÎªÔ¶¶ËIPµØÖ·£¬µÚ¶þ¸ö²ÎÊýÎªÔ¶¶Ë¶Ë¿ÚºÅ
+	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.0.166\",8081\r\n","OK",2000); //´´½¨TCPÁ¬½Ó£¬Á¬½Óserver¶Ë£¬µÚÒ»¸ö²ÎÊýÎªÔ¶¶ËIPµØÖ·£¬µÚ¶þ¸ö²ÎÊýÎªÔ¶¶Ë¶Ë¿ÚºÅ
 	//ÕâÀï¼ÓÅÐ¶ÏÌõ¼þ
 	
 	
 	atk_8266_send_cmd("AT+CIPMODE=1\r\n","OK",500);//½øÈëÍ¸´«Ä£Ê½
 	atk_8266_send_cmd("AT+CIPSEND\r\n",">",500); //·¢ËÍÊý¾Ý
+}
+
+void SIM900A(void){
+	u8 ERROR=1;
+	atk_8266_send_cmd("++++\r\n",NULL,200);
+	delay_ms(5000);
+	while(ERROR){
+			ERROR=atk_8266_send_cmd("AT+CIPMODE=1\r\n","OK",500);//½øÈëÍ¸´«Ä£Ê½
+			delay_ms(5000);
+	}
+	ERROR=1;
+	while(ERROR){
+			ERROR=atk_8266_send_cmd("AT+CIPCSGP=1,\"CMNET\"\r\n","OK",500);
+			delay_ms(5000);
+	}
+	ERROR=1;
+	while(ERROR){
+			ERROR=atk_8266_send_cmd("AT+CGDCONT=1,\"IP\",\"CMNET\"\r\n","OK",5000);
+			delay_ms(5000);
+	}
+	ERROR=1;
+	while(ERROR){
+			ERROR=atk_8266_send_cmd("AT+CGATT=1\r\n","OK",10000);
+			delay_ms(5000);
+	}
+	ERROR=1;
+	while(ERROR){
+			ERROR=atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"112.74.89.58\",\"46495\"\r\n",NULL,10000);
+			delay_ms(5000);
+	}
+	delay_ms(25000);
+}
+
+int main()
+{
+	u8 r1, r2, c1, c2;
+
+  SystemInit();
 	
+  usart1_Init(921600);
+	ESP8266();
+//	SIM900A();
 	Rx1_enable = 1; // ¿ªÆôU1½ÓÊÕ
 	ads1298_init();
 	r1 = resetADS1298(0,CS1_Port,CS1_Pin);
@@ -56,6 +91,7 @@ int main()
 	
   while (1)                                     //Ö´ÐÐ³ÌÐò
   {
+		
 	}
 	
 }    
