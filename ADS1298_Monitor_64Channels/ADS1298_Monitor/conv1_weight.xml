@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<filters>
+	<filter number="filter-0">
+		<tensor number="tensor-0">
+			<row number="row-0">0.11228453</row>
+			<row number="row-1">0.18991612</row>
+			<row number="row-2">-0.26987717</row>
+		</tensor>
+	</filter>
+	<filter number="filter-1">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.025983717</row>
+			<row number="row-1">0.35656485</row>
+			<row number="row-2">0.092402756</row>
+		</tensor>
+	</filter>
+	<filter number="filter-2">
+		<tensor number="tensor-0">
+			<row number="row-0">0.49536255</row>
+			<row number="row-1">-0.15068342</row>
+			<row number="row-2">0.5445197</row>
+		</tensor>
+	</filter>
+	<filter number="filter-3">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.17492211</row>
+			<row number="row-1">0.42372736</row>
+			<row number="row-2">0.59916466</row>
+		</tensor>
+	</filter>
+	<filter number="filter-4">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.60119903</row>
+			<row number="row-1">-0.23659632</row>
+			<row number="row-2">0.39265934</row>
+		</tensor>
+	</filter>
+	<filter number="filter-5">
+		<tensor number="tensor-0">
+			<row number="row-0">0.42934605</row>
+			<row number="row-1">-0.03708381</row>
+			<row number="row-2">-0.1090174</row>
+		</tensor>
+	</filter>
+	<filter number="filter-6">
+		<tensor number="tensor-0">
+			<row number="row-0">0.17606746</row>
+			<row number="row-1">-0.4996362</row>
+			<row number="row-2">0.113731995</row>
+		</tensor>
+	</filter>
+	<filter number="filter-7">
+		<tensor number="tensor-0">
+			<row number="row-0">0.13394348</row>
+			<row number="row-1">0.45293587</row>
+			<row number="row-2">-0.06503015</row>
+		</tensor>
+	</filter>
+	<filter number="filter-8">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.45403752</row>
+			<row number="row-1">-0.2256757</row>
+			<row number="row-2">0.15628174</row>
+		</tensor>
+	</filter>
+	<filter number="filter-9">
+		<tensor number="tensor-0">
+			<row number="row-0">0.20354418</row>
+			<row number="row-1">0.36488512</row>
+			<row number="row-2">-0.106533915</row>
+		</tensor>
+	</filter>
+	<filter number="filter-10">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.14531776</row>
+			<row number="row-1">0.41576713</row>
+			<row number="row-2">0.48086578</row>
+		</tensor>
+	</filter>
+	<filter number="filter-11">
+		<tensor number="tensor-0">
+			<row number="row-0">0.038624436</row>
+			<row number="row-1">-0.40039903</row>
+			<row number="row-2">0.54436386</row>
+		</tensor>
+	</filter>
+	<filter number="filter-12">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.10103632</row>
+			<row number="row-1">0.4448954</row>
+			<row number="row-2">0.2254388</row>
+		</tensor>
+	</filter>
+	<filter number="filter-13">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.19167717</row>
+			<row number="row-1">0.1678671</row>
+			<row number="row-2">0.10042468</row>
+		</tensor>
+	</filter>
+	<filter number="filter-14">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.43921205</row>
+			<row number="row-1">0.3987934</row>
+			<row number="row-2">0.24338011</row>
+		</tensor>
+	</filter>
+	<filter number="filter-15">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.5580894</row>
+			<row number="row-1">0.23221603</row>
+			<row number="row-2">-0.48706818</row>
+		</tensor>
+	</filter>
+	<filter number="filter-16">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.12518266</row>
+			<row number="row-1">-0.06457561</row>
+			<row number="row-2">0.032738507</row>
+		</tensor>
+	</filter>
+	<filter number="filter-17">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.28508514</row>
+			<row number="row-1">0.01757045</row>
+			<row number="row-2">-0.53827935</row>
+		</tensor>
+	</filter>
+	<filter number="filter-18">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.05041598</row>
+			<row number="row-1">-0.57777566</row>
+			<row number="row-2">-0.61771154</row>
+		</tensor>
+	</filter>
+	<filter number="filter-19">
+		<tensor number="tensor-0">
+			<row number="row-0">0.05605612</row>
+			<row number="row-1">-0.18957321</row>
+			<row number="row-2">-0.3744214</row>
+		</tensor>
+	</filter>
+	<filter number="filter-20">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.42530045</row>
+			<row number="row-1">-0.3640472</row>
+			<row number="row-2">-0.4938839</row>
+		</tensor>
+	</filter>
+	<filter number="filter-21">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.056557387</row>
+			<row number="row-1">-0.16791229</row>
+			<row number="row-2">-0.0052193273</row>
+		</tensor>
+	</filter>
+	<filter number="filter-22">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.013927249</row>
+			<row number="row-1">-0.46942532</row>
+			<row number="row-2">0.06265606</row>
+		</tensor>
+	</filter>
+	<filter number="filter-23">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.2896548</row>
+			<row number="row-1">-0.20741774</row>
+			<row number="row-2">0.38057852</row>
+		</tensor>
+	</filter>
+	<filter number="filter-24">
+		<tensor number="tensor-0">
+			<row number="row-0">0.07059475</row>
+			<row number="row-1">-0.049789604</row>
+			<row number="row-2">-0.56021947</row>
+		</tensor>
+	</filter>
+	<filter number="filter-25">
+		<tensor number="tensor-0">
+			<row number="row-0">0.57429385</row>
+			<row number="row-1">-0.23197551</row>
+			<row number="row-2">-0.054647326</row>
+		</tensor>
+	</filter>
+	<filter number="filter-26">
+		<tensor number="tensor-0">
+			<row number="row-0">0.3914667</row>
+			<row number="row-1">-0.09838169</row>
+			<row number="row-2">-0.2775607</row>
+		</tensor>
+	</filter>
+	<filter number="filter-27">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.12439084</row>
+			<row number="row-1">-0.49502558</row>
+			<row number="row-2">0.50893915</row>
+		</tensor>
+	</filter>
+	<filter number="filter-28">
+		<tensor number="tensor-0">
+			<row number="row-0">0.47104385</row>
+			<row number="row-1">0.17545712</row>
+			<row number="row-2">-0.23754543</row>
+		</tensor>
+	</filter>
+	<filter number="filter-29">
+		<tensor number="tensor-0">
+			<row number="row-0">0.588077</row>
+			<row number="row-1">-0.2526474</row>
+			<row number="row-2">0.13933788</row>
+		</tensor>
+	</filter>
+	<filter number="filter-30">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.16729222</row>
+			<row number="row-1">0.10018789</row>
+			<row number="row-2">0.06905834</row>
+		</tensor>
+	</filter>
+	<filter number="filter-31">
+		<tensor number="tensor-0">
+			<row number="row-0">-0.08197704</row>
+			<row number="row-1">-0.29255047</row>
+			<row number="row-2">-0.1310961</row>
+		</tensor>
+	</filter>
+</filters>

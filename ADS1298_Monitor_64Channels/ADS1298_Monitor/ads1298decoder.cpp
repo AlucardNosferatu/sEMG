@@ -140,6 +140,8 @@ void Ads1298Decoder::handleWifiNewConnection()
     socket = server->nextPendingConnection();  // the socket of the connected TCP server
     connect(socket,SIGNAL(readyRead()),this,SLOT(handleWifiReceiveNewData()));
     emit hasNewWifiConnection(index);
+
+
 }
 
 void Ads1298Decoder::handleWifiReceiveNewData()

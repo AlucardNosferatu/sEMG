@@ -2,6 +2,13 @@
 #include "ui_mainwindow.h"
 #include <QSerialPortInfo>     //include the header files associated the serial port
 #include <QDebug>
+#include <iostream>
+
+
+#include <memory>
+#include <time.h>
+#include <ctime>
+
 
 static float ahp[1]={
     1.0f
@@ -64,6 +71,7 @@ MainWindow::MainWindow(QWidget *parent):         // the Constuctor
     connect(ui->checkBox_overwrite,SIGNAL(stateChanged(int)),this,SLOT(handleRecordNameChanged()));
     handleRecordNameChanged();
     isRecording = false;
+
 }
 
 MainWindow::~MainWindow()                        // the Destructor
@@ -89,6 +97,7 @@ void MainWindow::on_pushButton_open_clicked()
     Ads1298Decoder* ads = new Ads1298Decoder(com,baudRate,0,this);
     module.append(ads);
     //connect(发送对象,发送对象的信号,接收对象,接收对象的槽函数)
+    std::cout << "on_pushButton_open_clicked" << std::endl;
     connect(ads,SIGNAL(hasNewDataPacket(int,double*)),this,SLOT(handleHasNewDataPacket(int,double*)));
     connect(ads,SIGNAL(hasNewCmdReply(int,char)),this,SLOT(handleHasNewCmdReply(int,char)));
     setCustomPlotPattern();
@@ -104,10 +113,49 @@ void MainWindow::on_pushButton_connectWifi_clicked()
 {
     QString s = ui->lineEdit_port->text();
     QStringList ports = s.split(";");
-    for(int i=0;i<ports.length();i++)
+    std::cout <<  s.toStdString().data() << std::endl;
+    // init for cnn predict===
+    row=100, col=16;
+    count = 0;
+    //读取权重-----
+    conv1Filter = Filter(32, 1, 3, 1);
+    conv1Filter = parseFilterWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/conv1_weight.xml", 32, 1, 3, 1);
+    convbias1 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bias1_weight.xml", 32);
+
+    conv2Filter = Filter(64, 32, 3, 1);
+    conv2Filter = parseFilterWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/conv2_weight.xml", 64, 32, 3, 1);
+    convbias2 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bias2_weight.xml", 64);
+
+    conv3Filter = Filter(128, 64, 3, 1);
+    conv3Filter = parseFilterWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/conv3_weight.xml", 128, 64, 3, 1);
+    convbias3 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bias3_weight.xml", 128);
+
+    fc1weight = parseFullConnWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/fullconn1_weight.xml", 5*8*128, 256);
+    fullbias1 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/fullconn1_bias.xml", 256);
+
+    fc2weight = parseFullConnWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/fullconn2_weight.xml", 256, 10);
+    fullbias2 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/fullconn2_bias.xml", 10);
+
+    bn1_weight = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bn1_weight.xml", 256);
+    bn1_bias = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bn1_bias.xml", 256);
+    bn1_running_mean = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bn1_running_mean.xml", 256);
+    bn1_running_var = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bn1_running_var.xml", 256);
+
+
+    for(int i=0;i<1;i++)
     {
+        p = new double*[row];
+        for(int i=0; i<row; i++){
+            p[i] = new double[col];
+        }
+        for(int i=0; i<row; i++){
+            for(int j=0; j<col; j++){
+                p[i][j] = 0.0;
+            }
+         }
         Ads1298Decoder* ads = new Ads1298Decoder(static_cast<quint16>(ports[i].toUInt()),i,this);//create a pointer pointing to the class Ads1298Decoder
         module.append(ads);
+        std::cout << "on_pushButton_connectWifi_clicked" << std::endl;
         connect(module[i],SIGNAL(hasNewDataPacket(int,double*)),this,SLOT(handleHasNewDataPacket(int,double*)));
         connect(module[i],SIGNAL(hasNewCmdReply(char)),this,SLOT(handleHasNewCmdReply(char)));
         connect(module[i],SIGNAL(hasNewWifiConnection(int)),this,SLOT(handleHasNewWifiConnection(int)));
@@ -259,6 +307,10 @@ void MainWindow::updatePlotData(int chIndex)
     int moIndex = int(chIndex/CH_NUM);
     for(int i= moIndex*CH_NUM; i < (moIndex+1)*CH_NUM; i++)
     {
+//        if(i != moIndex*CH_NUM){ // show one chanel
+//            break;
+//        }
+
         double fData = filterData[i]->back();
         filterPlotData.push_back(fData);
         if(filterPlotData.size()>PlotNum)    //the Plot number is 250*5.
@@ -313,6 +365,8 @@ void MainWindow::handleHasNewDataPacket(int module_index, double *newDP)      //
         fd = notchfilters_50[i+module_index*CH_NUM]->filter(static_cast<float>(newDP[i]));                  //50Hz_notchfilters
         fd = notchfilters_100[i+module_index*CH_NUM]->filter(fd);                                           //100Hz_notchfilter
         fd = hpfilters[i+module_index*CH_NUM]->filter(fd);                                                  //20Hz_HighPassfilter
+        //no detrend
+        /*
         if(i==0){
             dd=0;
             prev=fd;
@@ -320,13 +374,65 @@ void MainWindow::handleHasNewDataPacket(int module_index, double *newDP)      //
         else{
             dd=fd-prev;
             prev=fd;
-        }
+        }*/
         detrendedData[i+module_index*CH_NUM]->append(static_cast<const double>(dd));
         filterData[i+module_index*CH_NUM]->append(static_cast<const double>(fd));                           //filterData
         rawData[i+module_index*CH_NUM]->append(newDP[i]);                                                   //rawData
         fdata[i] = static_cast<double>(fd);
         ddata[i] = static_cast<double>(dd);
+        if(i==0){
+            time_t t = time(NULL);
+            char ch[64] = {0};
+            strftime(ch, sizeof(ch) - 1, "%Y-%m-%d %H:%M:%S", localtime(&t));
+            //std::cout << ch << "   data:" << fdata[i] <<std::endl;
+            predict();
+        }
+
+        if(count >= row){// set zero if count >= 100
+            //CNNs                       CNNPrediction
+            //=============================================================================================================================
+            // index 8-15 channel data
+            Matrix emgImg = Matrix(100,8,0);
+            for(int imgRow=0; imgRow<100; imgRow++){
+                for(int imgCol=0; imgCol<8; imgCol++){
+                    emgImg.setValue(imgRow, imgCol, p[imgRow][8+imgCol]*1000);
+                }
+            }
+
+            Tensor semg = Tensor(0, 100, 8);
+            semg.addLayer(emgImg);
+
+            Tensor conv1 = semg.forwardConv(conv1Filter, 1, 1, 1, 0, convbias1);
+            conv1.forwardReLu();
+            Tensor pool1 = conv1.forwardMaxpool(10, 1);
+
+            Tensor conv2 = pool1.forwardConv(conv2Filter, 1, 1, 1, 0, convbias2);
+            conv2.forwardReLu();
+            Tensor pool2 = conv2.forwardMaxpool(2, 1);
+            Tensor conv3 = pool2.forwardConv(conv3Filter, 1, 1, 1, 0, convbias3);
+            conv3.forwardReLu();
+            Matrix flat = conv3.forwardFlat();
+            Matrix fc1 = flat.forwardFullConnect(5*8*128, 256, fc1weight, fullbias1);
+            fc1.batchNormal(bn1_weight, bn1_bias, bn1_running_mean, bn1_running_var);
+            fc1.forwardRelu();
+            //fc1.getShape();
+            Matrix fc2 = fc1.forwardFullConnect(256, 10, fc2weight, fullbias2);
+            vector<int> c = fc2.softmax();
+            string motion = getMotionStr(c[0]);
+            ui->pushButton_motion->setText(QString::fromStdString(intToString(c[0]) + ": " + motion));
+            ui->pushButton_motion->setStyleSheet("QPushButton{font-size:36px;color:#666666;}");
+            count = 0;
+            for(int m=0; m<row; m++){
+                for(int n=0; n<col; n++){
+                    p[m][n] = 0.0;
+                }
+             }
+        }
+        p[count][i] = fdata[i];
     }
+    count ++;
+
+
     if(isRecording)                                        //isRecording is True, Then record the data
     {
         for(int i=0; i<CH_NUM; i++)
@@ -556,6 +662,7 @@ void MainWindow::on_pushButton_workBench_clicked()
 
 void MainWindow::on_pushButton_record_clicked()
 {
+    //if(!isRecording)
     if(ui->pushButton_record->text()=="Record")             // when the button show "record" and putting down the button
     {
         if(isFileNameValid())                               // The defined record file name is valid
@@ -582,8 +689,10 @@ void MainWindow::on_pushButton_record_clicked()
                 for(int i=0; i<CH_NUM; i++)
                     *ro<<"EMG"<<i<<'\t';
                 *ro<<'\n';
+
                 rFile.append(rf);
                 rOut.append(ro);
+
 
                 QString fn_raw = QString("%1/%2%3_%4_raw.txt").arg(dir).arg(fileName).arg(n).arg(i);
                 QFile * rf_r = new QFile(fn_raw);
@@ -594,8 +703,10 @@ void MainWindow::on_pushButton_record_clicked()
                 for(int i=0; i<CH_NUM; i++)
                     *ro_r<<"EMG"<<i<<'\t';
                 *ro_r<<'\n';
+
                 rFile_raw.append(rf_r);
                 rOut_raw.append(ro_r);
+
 
                 QString fn_det = QString("%1/%2%3_%4_det.txt").arg(dir).arg(fileName).arg(n).arg(i);
                 QFile * rf_d = new QFile(fn_det);
@@ -605,8 +716,9 @@ void MainWindow::on_pushButton_record_clicked()
                 for(int i=0; i<CH_NUM; i++)
                     *ro_d<<"EMG"<<i<<'\t';
                 *ro_d<<'\n';
-                rFile_raw.append(rf_d);
-                rOut_raw.append(ro_d);
+
+                rFile_det.append(rf_d);
+                rOut_det.append(ro_d);
 
             }
             isRecording = true;
@@ -627,6 +739,7 @@ void MainWindow::on_pushButton_record_clicked()
         {
             rFile[i]->close();
             rFile_raw[i]->close();
+            rFile_det[i]->close();
         }
         ui->pushButton_record->setText("Record");
         int n = ui->spinBox_fileName->value();
@@ -637,5 +750,73 @@ void MainWindow::on_pushButton_record_clicked()
 
 void MainWindow::handleRecordNameChanged()
 {
-    ui->pushButton_record->setEnabled(isFileNameValid());
+   ui->pushButton_record->setEnabled(isFileNameValid());
+}
+
+void MainWindow::predict()
+{
+//    clock_t startTime,endTime1,endTime2;
+//    startTime = clock();
+//    std::shared_ptr<torch::jit::script::Module> module = torch::jit::load("sEMG_weight_5_cpp.pt");
+//    endTime1 = clock();
+//    std::cout << "load model time: " <<(double)(endTime1 - startTime) / CLOCKS_PER_SEC << "s" << std::endl;
+
+//    assert(module != nullptr);
+//    std::cout << "load pt ok!\n";
+
+//    std::cout << "=============================" << std::endl;
+
+//    std::vector<torch::jit::IValue> inputs;
+//    inputs.push_back(torch::ones({1, 1, 100, 6}));
+
+//    //at::Tensor input = at::randn({1, 1, 100, 6});
+//    //std::cout << inputs << std::endl;
+
+//    at::Tensor output = module->forward(inputs).toTensor();
+//    std::cout << output << std::endl;
+//    endTime2 = clock();
+//    std::cout << "model forward time: " <<(double)(endTime2 - endTime1) / CLOCKS_PER_SEC << "s" << std::endl;
+}
+
+string MainWindow::getMotionStr(int num)
+{
+    string out = "";
+    switch(num){
+    case 0: cout << "放松";
+            out = "放松";
+            break;
+    case 1: cout << "握拳";
+            out = "握拳";
+                break;
+    case 2: cout << "上挥";
+            out = "上挥";
+                break;
+    case 3: cout << "下挥";
+            out = "下挥";
+                break;
+    case 4: cout << "左挥";
+            out = "左挥";
+                break;
+    case 5: cout << "右挥";
+            out = "右挥";
+                break;
+    case 6: cout << "一";
+            out = "一";
+                break;
+    case 7: cout << "二";
+            out = "二";
+                break;
+    case 8: cout << "五";
+            out = "五";
+                break;
+    case 9: cout << "六";
+            out = "六";
+                break;
+    }
+    return out;
+}
+
+void MainWindow::on_pushButton_record1_clicked()
+{
+
 }
