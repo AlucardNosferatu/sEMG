@@ -112,9 +112,6 @@ private slots:
     void on_pushButton_beginReadC_clicked();
     void on_pushButton_stopReadC_clicked();
     void on_pushButton_normalTest_clicked();
-
-    void on_pushButton_record1_clicked();
-
 private:
     void setCustomPlotPattern();
     void setCustomPlotData(double, double*);

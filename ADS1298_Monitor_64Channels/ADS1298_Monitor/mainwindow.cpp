@@ -815,8 +815,3 @@ string MainWindow::getMotionStr(int num)
     }
     return out;
 }
-
-void MainWindow::on_pushButton_record1_clicked()
-{
-
-}
