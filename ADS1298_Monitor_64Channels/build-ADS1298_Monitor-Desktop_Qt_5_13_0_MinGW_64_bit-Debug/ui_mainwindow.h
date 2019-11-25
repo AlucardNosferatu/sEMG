@@ -108,6 +108,7 @@ public:
     QVBoxLayout *verticalLayout_8;
     QPushButton *pushButton_record;
     QCheckBox *checkBox_overwrite;
+    QPushButton *pushButton_motion;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -130,7 +131,7 @@ public:
         lineEdit_channel->setReadOnly(true);
         customPlot0 = new QCustomPlot(centralWidget);
         customPlot0->setObjectName(QString::fromUtf8("customPlot0"));
-        customPlot0->setGeometry(QRect(10, 160, 461, 241));
+        customPlot0->setGeometry(QRect(10, 190, 321, 171));
         lineEdit_channel1 = new QLineEdit(customPlot0);
         lineEdit_channel1->setObjectName(QString::fromUtf8("lineEdit_channel1"));
         lineEdit_channel1->setGeometry(QRect(0, 240, 61, 21));
@@ -150,49 +151,49 @@ public:
         label_Icon->setGeometry(QRect(1860, 20, 21, 21));
         customPlot1 = new QCustomPlot(centralWidget);
         customPlot1->setObjectName(QString::fromUtf8("customPlot1"));
-        customPlot1->setGeometry(QRect(490, 160, 481, 241));
+        customPlot1->setGeometry(QRect(330, 190, 311, 171));
         customPlot2 = new QCustomPlot(centralWidget);
         customPlot2->setObjectName(QString::fromUtf8("customPlot2"));
-        customPlot2->setGeometry(QRect(990, 160, 471, 241));
+        customPlot2->setGeometry(QRect(650, 190, 301, 171));
         customPlot3 = new QCustomPlot(centralWidget);
         customPlot3->setObjectName(QString::fromUtf8("customPlot3"));
-        customPlot3->setGeometry(QRect(1480, 160, 431, 241));
+        customPlot3->setGeometry(QRect(960, 180, 311, 181));
         customPlot4 = new QCustomPlot(centralWidget);
         customPlot4->setObjectName(QString::fromUtf8("customPlot4"));
-        customPlot4->setGeometry(QRect(10, 420, 461, 241));
+        customPlot4->setGeometry(QRect(10, 360, 321, 211));
         customPlot5 = new QCustomPlot(centralWidget);
         customPlot5->setObjectName(QString::fromUtf8("customPlot5"));
-        customPlot5->setGeometry(QRect(490, 420, 481, 241));
+        customPlot5->setGeometry(QRect(330, 360, 311, 191));
         customPlot6 = new QCustomPlot(centralWidget);
         customPlot6->setObjectName(QString::fromUtf8("customPlot6"));
-        customPlot6->setGeometry(QRect(990, 420, 471, 241));
+        customPlot6->setGeometry(QRect(650, 360, 301, 181));
         customPlot7 = new QCustomPlot(centralWidget);
         customPlot7->setObjectName(QString::fromUtf8("customPlot7"));
-        customPlot7->setGeometry(QRect(1480, 420, 431, 241));
+        customPlot7->setGeometry(QRect(960, 370, 331, 171));
         customPlot8 = new QCustomPlot(centralWidget);
         customPlot8->setObjectName(QString::fromUtf8("customPlot8"));
-        customPlot8->setGeometry(QRect(10, 680, 461, 241));
+        customPlot8->setGeometry(QRect(10, 580, 321, 151));
         customPlot9 = new QCustomPlot(centralWidget);
         customPlot9->setObjectName(QString::fromUtf8("customPlot9"));
-        customPlot9->setGeometry(QRect(490, 680, 481, 241));
+        customPlot9->setGeometry(QRect(350, 560, 261, 171));
         customPlot10 = new QCustomPlot(centralWidget);
         customPlot10->setObjectName(QString::fromUtf8("customPlot10"));
-        customPlot10->setGeometry(QRect(990, 680, 471, 241));
+        customPlot10->setGeometry(QRect(640, 560, 331, 181));
         customPlot11 = new QCustomPlot(centralWidget);
         customPlot11->setObjectName(QString::fromUtf8("customPlot11"));
-        customPlot11->setGeometry(QRect(1480, 680, 431, 241));
+        customPlot11->setGeometry(QRect(970, 540, 321, 191));
         customPlot12 = new QCustomPlot(centralWidget);
         customPlot12->setObjectName(QString::fromUtf8("customPlot12"));
-        customPlot12->setGeometry(QRect(10, 930, 461, 221));
+        customPlot12->setGeometry(QRect(10, 740, 331, 161));
         customPlot13 = new QCustomPlot(centralWidget);
         customPlot13->setObjectName(QString::fromUtf8("customPlot13"));
-        customPlot13->setGeometry(QRect(490, 930, 481, 221));
+        customPlot13->setGeometry(QRect(340, 740, 311, 171));
         customPlot14 = new QCustomPlot(centralWidget);
         customPlot14->setObjectName(QString::fromUtf8("customPlot14"));
-        customPlot14->setGeometry(QRect(990, 930, 471, 221));
+        customPlot14->setGeometry(QRect(660, 740, 311, 191));
         customPlot15 = new QCustomPlot(centralWidget);
         customPlot15->setObjectName(QString::fromUtf8("customPlot15"));
-        customPlot15->setGeometry(QRect(1480, 930, 431, 221));
+        customPlot15->setGeometry(QRect(980, 740, 311, 191));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(1920, 80, 431, 71));
@@ -218,7 +219,7 @@ public:
 
         layoutWidget1 = new QWidget(centralWidget);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(12, 1, 961, 174));
+        layoutWidget1->setGeometry(QRect(12, 1, 1091, 179));
         horizontalLayout_10 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_10->setSpacing(6);
         horizontalLayout_10->setContentsMargins(11, 11, 11, 11);
@@ -455,6 +456,7 @@ public:
         verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
         pushButton_record = new QPushButton(layoutWidget1);
         pushButton_record->setObjectName(QString::fromUtf8("pushButton_record"));
+        pushButton_record->setEnabled(true);
 
         verticalLayout_8->addWidget(pushButton_record);
 
@@ -469,10 +471,13 @@ public:
 
         horizontalLayout_10->addLayout(horizontalLayout_12);
 
+        pushButton_motion = new QPushButton(centralWidget);
+        pushButton_motion->setObjectName(QString::fromUtf8("pushButton_motion"));
+        pushButton_motion->setGeometry(QRect(1310, 740, 341, 191));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 2361, 23));
+        menuBar->setGeometry(QRect(0, 0, 2361, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -519,6 +524,7 @@ public:
         pushButton_workBench->setText(QCoreApplication::translate("MainWindow", "\346\265\217\350\247\210", nullptr));
         pushButton_record->setText(QCoreApplication::translate("MainWindow", "Record", nullptr));
         checkBox_overwrite->setText(QCoreApplication::translate("MainWindow", "overwrite", nullptr));
+        pushButton_motion->setText(QCoreApplication::translate("MainWindow", "motion", nullptr));
     } // retranslateUi
 
 };

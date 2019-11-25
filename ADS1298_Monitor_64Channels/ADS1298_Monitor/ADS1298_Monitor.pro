@@ -53,14 +53,16 @@ FORMS    += \
     mainwindow.ui
 
 
-INCLUDEPATH += /opt/fftw/include
-DEPENDPATH += /opt/fftw/include
+#INCLUDEPATH += /opt/fftw/include
+#DEPENDPATH += /opt/fftw/include
+INCLUDEPATH += $$PWD/fftw3
+DEPENDPATH += $$PWD/fftw3
 
 win32:!win32-g++: PRE_TARGETDEPS += $$PWD/fftw3/libfftw3-3.lib
 #else:win32-g++: PRE_TARGETDEPS += $$PWD/fftw3/liblibfftw3-3.a
 
-#win32: LIBS += -L$$PWD/fftw3/ -llibfftw3-3
-LIBS += -L"/opt/fftw/lib" -lfftw3
+win32: LIBS += -L$$PWD/fftw3/ -llibfftw3-3
+#LIBS += -L"/opt/fftw/lib" -lfftw3
 
 ##libtorch
 #unix:!macx: LIBS += -L"//home/mitom/dlcv/libtorch/lib" -ltorch
