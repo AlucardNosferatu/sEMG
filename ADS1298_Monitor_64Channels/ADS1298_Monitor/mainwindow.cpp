@@ -119,47 +119,44 @@ void MainWindow::on_pushButton_connectWifi_clicked()
     count = 0;
     //读取权重-----
     conv1Filter = Filter(32, 1, 3, 1);
-    conv1Filter = parseFilterWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/conv1_weight.xml", 32, 1, 3, 1);
-    convbias1 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bias1_weight.xml", 32);
+    conv1Filter = parseFilterWeight("conv1_weight.xml", 32, 1, 3, 1);
+    convbias1 = parseBias("bias1_weight.xml", 32);
 
     conv2Filter = Filter(64, 32, 3, 1);
-    conv2Filter = parseFilterWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/conv2_weight.xml", 64, 32, 3, 1);
-    convbias2 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bias2_weight.xml", 64);
+    conv2Filter = parseFilterWeight("conv2_weight.xml", 64, 32, 3, 1);
+    convbias2 = parseBias("bias2_weight.xml", 64);
 
     conv3Filter = Filter(128, 64, 3, 1);
-    conv3Filter = parseFilterWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/conv3_weight.xml", 128, 64, 3, 1);
-    convbias3 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bias3_weight.xml", 128);
+    conv3Filter = parseFilterWeight("conv3_weight.xml", 128, 64, 3, 1);
+    convbias3 = parseBias("bias3_weight.xml", 128);
 
-    fc1weight = parseFullConnWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/fullconn1_weight.xml", 5*8*128, 256);
-    fullbias1 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/fullconn1_bias.xml", 256);
+    fc1weight = parseFullConnWeight("fullconn1_weight.xml", 5*8*128, 256);
+    fullbias1 = parseBias("fullconn1_bias.xml", 256);
 
-    fc2weight = parseFullConnWeight("/home/mitom/dlcv/qtprj/ADS1298_Monitor/fullconn2_weight.xml", 256, 10);
-    fullbias2 = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/fullconn2_bias.xml", 10);
+    fc2weight = parseFullConnWeight("fullconn2_weight.xml", 256, 10);
+    fullbias2 = parseBias("fullconn2_bias.xml", 10);
 
-    bn1_weight = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bn1_weight.xml", 256);
-    bn1_bias = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bn1_bias.xml", 256);
-    bn1_running_mean = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bn1_running_mean.xml", 256);
-    bn1_running_var = parseBias("/home/mitom/dlcv/qtprj/ADS1298_Monitor/bn1_running_var.xml", 256);
+    bn1_weight = parseBias("bn1_weight.xml", 256);
+    bn1_bias = parseBias("bn1_bias.xml", 256);
+    bn1_running_mean = parseBias("bn1_running_mean.xml", 256);
+    bn1_running_var = parseBias("bn1_running_var.xml", 256);
 
-
-    for(int i=0;i<1;i++)
-    {
-        p = new double*[row];
-        for(int i=0; i<row; i++){
-            p[i] = new double[col];
-        }
-        for(int i=0; i<row; i++){
-            for(int j=0; j<col; j++){
-                p[i][j] = 0.0;
-            }
-         }
-        Ads1298Decoder* ads = new Ads1298Decoder(static_cast<quint16>(ports[i].toUInt()),i,this);//create a pointer pointing to the class Ads1298Decoder
-        module.append(ads);
-        std::cout << "on_pushButton_connectWifi_clicked" << std::endl;
-        connect(module[i],SIGNAL(hasNewDataPacket(int,double*)),this,SLOT(handleHasNewDataPacket(int,double*)));
-        connect(module[i],SIGNAL(hasNewCmdReply(char)),this,SLOT(handleHasNewCmdReply(char)));
-        connect(module[i],SIGNAL(hasNewWifiConnection(int)),this,SLOT(handleHasNewWifiConnection(int)));
+    p = new double*[row];
+    for(int i=0; i<row; i++){
+        p[i] = new double[col];
     }
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+            p[i][j] = 0.0;
+        }
+     }
+    Ads1298Decoder* ads = new Ads1298Decoder(static_cast<quint16>(ports[0].toUInt()),0,this);//create a pointer pointing to the class Ads1298Decoder
+    module.append(ads);
+    std::cout << "on_pushButton_connectWifi_clicked" << std::endl;
+    connect(module[0],SIGNAL(hasNewDataPacket(int,double*)),this,SLOT(handleHasNewDataPacket(int,double*)));
+    connect(module[0],SIGNAL(hasNewCmdReply(char)),this,SLOT(handleHasNewCmdReply(char)));
+    connect(module[0],SIGNAL(hasNewWifiConnection(int)),this,SLOT(handleHasNewWifiConnection(int)));
+
     setCustomPlotPattern();
     refreshChannelLabels();
     refreshIIRFilters();
@@ -380,13 +377,6 @@ void MainWindow::handleHasNewDataPacket(int module_index, double *newDP)      //
         rawData[i+module_index*CH_NUM]->append(newDP[i]);                                                   //rawData
         fdata[i] = static_cast<double>(fd);
         ddata[i] = static_cast<double>(dd);
-        if(i==0){
-            time_t t = time(NULL);
-            char ch[64] = {0};
-            strftime(ch, sizeof(ch) - 1, "%Y-%m-%d %H:%M:%S", localtime(&t));
-            //std::cout << ch << "   data:" << fdata[i] <<std::endl;
-            predict();
-        }
 
         if(count >= row){// set zero if count >= 100
             //CNNs                       CNNPrediction
