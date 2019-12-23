@@ -6,13 +6,20 @@
 //#include "led.h"
 int r;
 
-int main()
+void switch_to_mcu()
+{
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	//复用推挽输出
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_Init(GPIOA, &GPIO_InitStructure);
+	GPIO_SetBits(GPIOA, GPIO_Pin_4);
+}
+	
+void test_start()
 {
 	u8 r1, r2, c1, c2;
-
-  SystemInit();
-	
-  usart1_Init(921600);
 	atk_8266_send_cmd("+++",NULL,200); // +++：退出透传
 	if(atk_8266_send_cmd("AT\r\n","OK",100)) //说明波特率不对
 	{
@@ -34,7 +41,7 @@ int main()
 	atk_8266_send_cmd("AT+CIPMUX=0\r\n","OK",500);//使能单连接
 	//端口号是自己定义的，只要客户端和服务端一致就行
 	
-	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.1.131\",8081\r\n","OK",2000); //创建TCP连接，连接server端，第一个参数为远端IP地址，第二个参数为远端端口号
+	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.1.80\",8081\r\n","OK",2000); //创建TCP连接，连接server端，第一个参数为远端IP地址，第二个参数为远端端口号
 	//这里加判断条件
 	
 	
@@ -57,6 +64,17 @@ int main()
   while (1)                                     //执行程序
   {
 	}
+}
+
+int main()
+{
+  SystemInit();
 	
+  usart1_Init(921600);
+	
+	switch_to_mcu();
+	
+	test_start();
 }    
+
 

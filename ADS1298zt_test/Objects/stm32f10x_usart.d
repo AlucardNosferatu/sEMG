@@ -1,8 +1,8 @@
-.\objects\stm32f10x_usart.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\src\stm32f10x_usart.c
+.\objects\stm32f10x_usart.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\src\stm32f10x_usart.c
 .\objects\stm32f10x_usart.o: .\driver\inc\stm32f10x_usart.h
 .\objects\stm32f10x_usart.o: .\CMSIS\stm32f10x.h
 .\objects\stm32f10x_usart.o: .\CMSIS\core_cm3.h
-.\objects\stm32f10x_usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\stm32f10x_usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\stm32f10x_usart.o: .\CMSIS\system_stm32f10x.h
 .\objects\stm32f10x_usart.o: .\user\stm32f10x_conf.h
 .\objects\stm32f10x_usart.o: .\driver\inc\stm32f10x_adc.h

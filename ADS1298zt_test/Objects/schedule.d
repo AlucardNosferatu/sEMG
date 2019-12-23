@@ -2,7 +2,7 @@
 .\objects\schedule.o: user\schedule.h
 .\objects\schedule.o: .\CMSIS\stm32f10x.h
 .\objects\schedule.o: .\CMSIS\core_cm3.h
-.\objects\schedule.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\schedule.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\schedule.o: .\CMSIS\system_stm32f10x.h
 .\objects\schedule.o: .\user\stm32f10x_conf.h
 .\objects\schedule.o: .\driver\inc\stm32f10x_adc.h
