@@ -48,7 +48,13 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Filter.vi" Type="VI" URL="../Filter.vi"/>
 		<Item Name="Init.vi" Type="VI" URL="../Init.vi"/>
-		<Item Name="依赖关系" Type="Dependencies"/>
+		<Item Name="依赖关系" Type="Dependencies">
+			<Item Name="vi.lib" Type="Folder">
+				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
+				<Item Name="NI_PtbyPt.lvlib" Type="Library" URL="/&lt;vilib&gt;/ptbypt/NI_PtbyPt.lvlib"/>
+			</Item>
+			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
+		</Item>
 		<Item Name="程序生成规范" Type="Build"/>
 	</Item>
 	<Item Name="NI-cRIO-9039-01C8857A" Type="RT CompactRIO">
@@ -152,6 +158,7 @@ AddOutputFilter chunkFilter
 						<Property Name="featurePacks" Type="Str">Industrial</Property>
 						<Property Name="Industrial:BufferingEnabled" Type="Str">False</Property>
 						<Property Name="Industrial:ChannelIndex" Type="Str">0</Property>
+						<Property Name="Industrial:EnableTimestamp" Type="Str">True</Property>
 						<Property Name="Industrial:IODirection" Type="Str">Input</Property>
 						<Property Name="Industrial:IsNetworkPublished" Type="Str">True</Property>
 						<Property Name="Industrial:Mode" Type="Str">1</Property>
@@ -159,8 +166,9 @@ AddOutputFilter chunkFilter
 						<Property Name="Network:UseBinding" Type="Str">False</Property>
 						<Property Name="Network:UseBuffering" Type="Str">False</Property>
 						<Property Name="numTypedefs" Type="UInt">0</Property>
+						<Property Name="Path" Type="Str">/NewADC.lvproj/NI-cRIO-9039-01C8857A/机箱/实时扫描资源/模块1/</Property>
 						<Property Name="type" Type="Str">Industrial</Property>
-						<Property Name="typeDesc" Type="Bin">(1!!!"E!A!!!!!!"!!5!#A!!!1!!!!!!!!!!!!!!!!!!</Property>
+						<Property Name="typeDesc" Type="Bin">*1!!!"E!A!!!!!!"!!V!#A!'2'^V9GRF!!!"!!!!!!!!!!!!!!!!!!!</Property>
 					</Item>
 					<Item Name="AI1" Type="Variable">
 						<Property Name="featurePacks" Type="Str">Industrial</Property>
