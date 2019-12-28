@@ -1,5 +1,4 @@
 # sEMG
-Modified from https://github.com/ntsmzt/sEMG for Arm-Gestures-Recognition
+Amplifier: AD8226
 
-
-Credit for the elder fellows from BUPT and Prof.Fu
+ADC: NI9215 with CompactRIO (LabVIEW)
