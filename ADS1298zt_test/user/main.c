@@ -4,7 +4,7 @@
 #include "schedule.h"
 #include "wifi.h"
 //#include "led.h"
-#define emg_mode
+//#define emg_mode
 
 int r;
 
@@ -49,7 +49,7 @@ void wifi_init()
 	atk_8266_send_cmd("AT+CIPMUX=0\r\n","OK",500);//使能单连接
 	//端口号是自己定义的，只要客户端和服务端一致就行
 	
-	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.1.80\",8084\r\n","OK",2000); //创建TCP连接，连接server端，第一个参数为远端IP地址，第二个参数为远端端口号
+	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.1.96\",8084\r\n","OK",2000); //创建TCP连接，连接server端，第一个参数为远端IP地址，第二个参数为远端端口号
 	//这里加判断条件
 	
 	atk_8266_send_cmd("AT+CIPMODE=1\r\n","OK",500);//进入透传模式
