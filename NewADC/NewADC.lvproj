@@ -46,6 +46,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="Filter.vi" Type="VI" URL="../Filter.vi"/>
 		<Item Name="Init.vi" Type="VI" URL="../Init.vi"/>
 		<Item Name="依赖关系" Type="Dependencies"/>
 		<Item Name="程序生成规范" Type="Build"/>
