@@ -5,7 +5,6 @@
 #include "wifi.h"
 //#include "led.h"
 //#define emg_mode
-
 int r;
 
 void switch_init()
@@ -28,15 +27,15 @@ void switch_to_imu()
 	GPIO_ResetBits(GPIOA, GPIO_Pin_4);
 }
 
-void wifi_init()
+void wifi_init(int br)
 {
 	atk_8266_send_cmd("+++",NULL,200); // +++：退出透传
 	if(atk_8266_send_cmd("AT\r\n","OK",100)) //说明波特率不对
 	{
-			usart1_Init(115200);
-			atk_8266_send_cmd("AT+UART_DEF=921600,8,1,0,0\r\n","OK",500);//保存波特率设置
+			usart1_Init(1036800-br);
+			atk_8266_send_cmd("AT+UART_DEF=115200,8,1,0,0\r\n","OK",500);//保存波特率设置
 			atk_8266_send_cmd("AT+RST\r\n","ready",1000);//重启模块
-			usart1_Init(921600);
+			usart1_Init(br);
 	}
 
 	atk_8266_send_cmd("AT+RST\r\n","ready",500); //重启模块
@@ -49,7 +48,7 @@ void wifi_init()
 	atk_8266_send_cmd("AT+CIPMUX=0\r\n","OK",500);//使能单连接
 	//端口号是自己定义的，只要客户端和服务端一致就行
 	
-	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"192.168.1.96\",8084\r\n","OK",2000); //创建TCP连接，连接server端，第一个参数为远端IP地址，第二个参数为远端端口号
+	atk_8266_send_cmd("AT+CIPSTART=\"TCP\",\"10.20.96.39\",8081\r\n","OK",2000); //创建TCP连接，连接server端，第一个参数为远端IP地址，第二个参数为远端端口号
 	//这里加判断条件
 	
 	atk_8266_send_cmd("AT+CIPMODE=1\r\n","OK",500);//进入透传模式
@@ -80,10 +79,18 @@ void ads1298_loop()
 
 int main()
 {
+	int baud_rate;
+#ifdef emg_mode
+	baud_rate = 921600;
+#else
+	baud_rate = 115200;
+#endif
+	
 	SystemInit();
-  usart1_Init(921600);
+  usart1_Init(baud_rate);
 	switch_init();
-	wifi_init();
+	switch_to_mcu();
+	wifi_init(baud_rate);
 	
 #ifdef emg_mode
 	switch_to_mcu();
